@@ -2,41 +2,31 @@ import { BenefitCard } from "./BenefitsCard";
 
 export const BenefitsGrid = () => {
   return (
-    <div className="relative content-center items-center box-border caret-transparent gap-x-0 flex flex-col shrink-0 h-min justify-center gap-y-0 w-full">
-      <div className="relative content-start items-start box-border caret-transparent gap-x-6 flex flex-col shrink-0 flex-wrap h-min justify-center max-w-[500px] gap-y-6 w-full md:flex-row md:max-w-none">
-        <div className="box-content caret-black block md:aspect-auto md:box-border md:caret-transparent md:contents md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-          <BenefitCard
-            variant="variant1"
-            title="Real-Time Analytics"
-            description="Stay ahead with accurate, real-time performance tracking"
-          />
-        </div>
-        <div className="box-content caret-black block md:aspect-auto md:box-border md:caret-transparent md:contents md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-          <div className="static box-content caret-black basis-auto grow-0 shrink h-auto min-h-0 min-w-0 w-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:basis-0 md:grow md:shrink-0 md:h-[360px] md:min-h-[auto] md:min-w-[300px] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-px md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-            <BenefitCard
-              variant="variant2"
-              title="AI-Driven Growth"
-              description="Make smarter moves with accurate, real-time business insights."
-              badge1Text="80% Automation"
-              badge2Text="10% Cost"
-              beforeText="BEFORE"
-              afterText="AFTER"
-            />
-          </div>
-        </div>
-        <div className="box-content caret-black block md:aspect-auto md:box-border md:caret-transparent md:contents md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-          <div className="static box-content caret-black basis-auto grow-0 shrink h-auto min-h-0 min-w-0 w-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:basis-0 md:grow md:shrink-0 md:h-[360px] md:min-h-[auto] md:min-w-[300px] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-px md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-            <BenefitCard
-              variant="variant3"
-              title="Sync in real time"
-              description="connect with your team instantly to track progress and updates"
-              logoUrl="https://c.animaapp.com/mloikyq0WG9Ud9/assets/8x7d36XigNJwbX3MhEzcU6N7N8.png"
-              logoAlt="logo"
-            />
-          </div>
-        </div>
+    <div className="flex flex-col gap-6 w-full justify-center items-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full md:max-w-none">
+        <BenefitCard
+          variant="variant1"
+          title="AI Customer Support"
+          description="Deploy chatbots to automate support, capture leads, and answer FAQs 24/7."
+        />
+        <BenefitCard
+          variant="variant2"
+          title="Workflow Automation"
+          description="Cut manual work and delays with automated workflows for your team."
+          badge1Text="80% Automation"
+          badge2Text="10% Cost"
+          beforeText="BEFORE"
+          afterText="AFTER"
+        />
+        <BenefitCard
+          variant="variant3"
+          title="Custom AI Development"
+          description="End-to-end product development for global startups and enterprises."
+          logoUrl="https://c.animaapp.com/mloikyq0WG9Ud9/assets/8x7d36XigNJwbX3MhEzcU6N7N8.png"
+          logoAlt="logo"
+        />
       </div>
-      <div className="box-content caret-black block md:aspect-auto md:box-border md:caret-transparent md:contents md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
+      <div className="w-full">
         <BenefitCard
           variant="variant4"
           features={[

@@ -1,3 +1,5 @@
+import { Card } from "@/components/ui/card";
+
 export type FeatureCardProps = {
   variant: string;
   iconSrc: string;
@@ -12,8 +14,8 @@ export const FeatureCard = (props: FeatureCardProps) => {
   const hasGraphic = props.variant === "md:grow-[1.5]";
 
   return (
-    <div
-      className={`static box-content caret-black basis-auto grow-0 shrink min-h-0 min-w-0 w-auto z-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:basis-0 md:shrink-0 md:min-h-[auto] md:min-w-[300px] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-px md:z-[2] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] ${props.variant}`}
+    <Card
+      className={`static bg-transparent border-0 shadow-none box-content caret-black basis-auto grow-0 shrink min-h-0 min-w-0 w-auto z-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:basis-0 md:shrink-0 md:min-h-[auto] md:min-w-[300px] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-px md:z-[2] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] ${props.variant}`}
     >
       <div className="static [align-items:normal] bg-transparent shadow-none box-content caret-black gap-x-[normal] block h-auto justify-normal min-h-0 gap-y-[normal] w-auto rounded-none md:relative md:content-center md:items-center md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:gap-x-6 md:flex md:h-min md:justify-start md:min-h-[268px] md:overscroll-x-auto md:overscroll-y-auto md:gap-y-6 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:p-5 md:scroll-m-0 md:scroll-p-[auto] md:rounded-[20px]">
         {hasGraphic && (
@@ -55,6 +57,6 @@ export const FeatureCard = (props: FeatureCardProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };

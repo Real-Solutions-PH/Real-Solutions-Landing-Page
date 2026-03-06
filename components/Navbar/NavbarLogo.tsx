@@ -8,7 +8,7 @@ export const NavbarLogo = () => {
         <div className="static box-content caret-black inset-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:inset-0">
           <img
             sizes="133px"
-            src="https://c.animaapp.com/mloikyq0WG9Ud9/assets/XKwmcGuSwjRsqQwiRhSr6MyK7A.svg"
+            src="/logo.png"
             alt="logo"
             className="box-content caret-black h-auto object-fill object-[50%_50%] align-middle w-auto md:aspect-[auto_240_/_81] md:box-border md:caret-transparent md:h-full md:object-contain md:object-[0%_50%] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
           />

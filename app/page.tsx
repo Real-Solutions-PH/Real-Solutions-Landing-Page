@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { BenefitsSection } from "@/components/BenefitsSection";
-import { FeaturesSection } from "@/components/FeaturesSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { TeamSection } from "@/components/TeamSection";
 import { Footer } from "@/components/Footer";
@@ -9,7 +8,7 @@ import { FAQSection } from "@/components/FAQSection";
 
 export default function Page() {
   return (
-    <div>
+    <main className="overflow-x-hidden w-full">
       <Navbar />
       <Hero />
       <BenefitsSection
@@ -19,11 +18,10 @@ export default function Page() {
         title="Why Choose Us"
         description="Partner with an AI agency delivering smart solutions."
       />
-      <FeaturesSection />
       <ServicesSection />
-      <TeamSection /> 
+      <TeamSection />
       <FAQSection />
       <Footer />
-    </div>
+    </main>
   );
 }

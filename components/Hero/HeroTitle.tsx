@@ -10,7 +10,7 @@ export const HeroTitle = () => {
                   <div className="static box-content caret-black inset-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:inset-0">
                     <img
                       sizes="64px"
-                      src="https://c.animaapp.com/mloikyq0WG9Ud9/assets/12.svg"
+                      src="/logo.png"
                       alt="logo"
                       className="box-content caret-black h-auto object-fill align-middle w-auto md:aspect-[auto_77_/_55] md:box-border md:caret-transparent md:h-full md:object-contain md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
                     />
@@ -21,16 +21,16 @@ export const HeroTitle = () => {
           </div>
         </div>
         <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-          <h1 className="text-[40px] box-border caret-transparent tracking-[-2.4px] leading-[48px] text-left text-nowrap font-inter md:text-[100px] md:tracking-[-6px] md:leading-[120px]">
-            <span className="text-[40px] bg-clip-text bg-[linear-gradient(25deg,rgb(0,0,0)_34%,rgb(255,255,255)_124%)] box-border caret-transparent inline-block tracking-[-2.4px] leading-[48px] text-nowrap pr-[-60%] mb-[-] ml-[26px)] mr-[60%] mt-[min(0px,] pl-[26px)] pt-[max(0px,] pb-[+] md:text-[100px] md:tracking-[-6px] md:leading-[120px] md:pr-[-60%] md:mb-[-] md:ml-[65px)] md:mr-[60%] md:mt-[min(0px,] md:pl-[65px)] md:pt-[max(0px,] md:pb-[+]">
-              ORB AI
+          <h1 className="text-[40px] box-border caret-transparent tracking-[-2.4px] leading-[48px] text-left text-nowrap font-inter md:text-[60px] lg:text-[100px] md:tracking-[-4px] lg:tracking-[-6px] md:leading-[80px] lg:leading-[120px]">
+            <span className="text-[40px] bg-clip-text bg-[linear-gradient(25deg,rgb(0,0,0)_34%,rgb(255,255,255)_124%)] box-border caret-transparent inline-block tracking-[-2.4px] leading-[48px] text-nowrap pr-[-60%] mb-[-] ml-[16px)] mr-[60%] mt-[min(0px,] pl-[16px)] pt-[max(0px,] pb-[+] md:text-[60px] lg:text-[100px] md:tracking-[-4px] lg:tracking-[-6px] md:leading-[80px] lg:leading-[120px] md:pr-[-60%] md:mb-[-] md:ml-[45px)] md:mr-[60%] md:mt-[min(0px,] md:pl-[45px)] md:pt-[max(0px,] md:pb-[+]">
+              Real Solutions PH
             </span>
           </h1>
         </div>
       </div>
       <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start max-w-[446px] break-words w-full">
         <p className="text-sm box-border caret-transparent leading-[21px] break-words text-center font-inter md:text-base md:leading-6">
-          Custom AI solutions, built for the innovators of tomorrow
+          We solve real business bottlenecks using AI and custom software.
         </p>
       </div>
     </div>

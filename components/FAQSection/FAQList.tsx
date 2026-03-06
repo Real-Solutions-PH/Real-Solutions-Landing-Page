@@ -1,35 +1,27 @@
-"use client";
-
-import { useState } from "react";
 import { FAQItem } from "./FAQItem";
+import { Accordion } from "@/components/ui/accordion";
 
 export const FAQList = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   const faqs = [
     {
-      question: "What services do you offer?",
-      answer: "We specialize in AI solutions, including machine learning models, automation, chatbots, predictive analytics, and consulting tailored to your business needs"
+      question: "What specific solutions do you offer?",
+      answer: "For MSMEs, we offer productized 'AI Customer Support' and 'Workflow Automation' stacks that can be deployed in 4-8 weeks. For global startups, we provide custom, end-to-end software and AI engineering services."
     },
     {
-      question: "How long does it take to develop an AI solution?",
-      answer: "Depending on the project's complexity, timelines typically range from 2 to 12 weeks. We'll provide a detailed timeline after our initial discovery call"
+      question: "How long does it take to see results?",
+      answer: "Our productized MSME packages are scoped to launch within 4-8 weeks, ensuring you start seeing real business outcomes like reduced manual work and faster support times almost immediately."
     },
     {
-      question: "Do I need technical expertise to work with you?",
-      answer: "No technical background is required! We handle all the complexity for you and explain every step in simple, actionable terms"
+      question: "Do I need an in-house tech team to maintain what you build?",
+      answer: "Not at all. We serve as your long-term tech partner. We offer ongoing retainers for maintenance, bug fixes, and continuous AI model tuning to ensure everything runs smoothly."
     },
     {
-      question: "Is my data safe when working with your agency?",
-      answer: "Absolutely. We follow strict data privacy protocols, comply with GDPR standards, and offer NDAs to ensure your information stays secure"
+      question: "Why should a global startup choose your studio?",
+      answer: "We offer direct access to senior founders combining full-stack engineering, UX strategy, and deep AI capabilities, providing high-quality engineering at a highly competitive TCO."
     },
     {
-      question: "Can AI really help my business grow?",
-      answer: "Yes! AI can automate tasks, enhance customer experiences, uncover insights, and open new revenue streams — and we'll show you exactly how it can work for your business."
+      question: "Are your AI solutions just technical buzzwords or real business tools?",
+      answer: "We focus completely on business outcomes. Our goal is to leverage AI to cut costs, accelerate your operations, and enhance customer experiences, not to sell you buzzwords."
     }
   ];
 
@@ -41,15 +33,16 @@ export const FAQList = () => {
         <div
           className="static [align-items:normal] box-content caret-black gap-x-[normal] block flex-row h-auto justify-normal max-w-none gap-y-[normal] w-auto md:relative md:content-center md:items-center md:aspect-auto md:box-border md:caret-transparent md:gap-x-4 md:flex md:flex-col md:h-min md:justify-center md:max-w-full md:overscroll-x-auto md:overscroll-y-auto md:gap-y-4 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
         >
-          {faqs.map((faq, index) => (
-            <FAQItem
-              key={index}
-              question={faq.question}
-              answer={faq.answer}
-              isExpanded={openIndex === index}
-              onClick={() => toggleFAQ(index)}
-            />
-          ))}
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <FAQItem
+                key={index}
+                index={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
+          </Accordion>
         </div>
       </div>
       <div className="static [align-items:normal] box-content caret-black gap-x-[normal] block shrink h-auto justify-normal min-h-0 min-w-0 opacity-100 gap-y-[normal] transform-none w-auto p-0 rounded-none md:relative md:content-center md:items-center md:aspect-auto md:box-border md:caret-transparent md:gap-x-2 md:flex md:shrink-0 md:h-min md:justify-center md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:gap-y-2 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-min md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:px-3 md:py-1.5 md:scroll-m-0 md:scroll-p-[auto] md:rounded-lg">

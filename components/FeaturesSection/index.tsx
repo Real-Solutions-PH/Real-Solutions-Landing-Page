@@ -4,8 +4,8 @@ import { FeaturesGrid } from "./FeaturesGrid";
 
 export const FeaturesSection = () => {
   return (
-    <section id="features" className="relative content-center items-center bg-neutral-100 box-border caret-transparent gap-x-8 flex flex-col shrink-0 h-min justify-center gap-y-8 w-full z-[2] overflow-hidden px-[18px] py-20 md:px-10 md:py-[100px]">
-      <div className="relative content-center items-center box-border caret-transparent gap-x-11 flex flex-col shrink-0 h-min justify-start max-w-[1350px] gap-y-11 w-full z-[3]">
+    <section id="features" className="relative content-center items-center bg-neutral-100 box-border caret-transparent gap-x-8 flex flex-col shrink-0 h-min justify-center gap-y-8 w-full z-[2] overflow-hidden px-6 py-20 md:px-12 lg:px-20 md:py-[100px]">
+      <div className="relative content-center items-center box-border caret-transparent gap-x-11 flex flex-col shrink-0 h-min justify-start max-w-[1640px] gap-y-11 w-full z-[3]">
         <FadeIn>
           <SectionHeader
             iconUrl="https://c.animaapp.com/mloikyq0WG9Ud9/assets/icon-12.svg"

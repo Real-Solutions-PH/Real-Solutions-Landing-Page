@@ -8,8 +8,8 @@ export const FeaturesGrid = () => {
           <FeatureCard
             variant="md:grow-[1.5]"
             iconSrc="https://c.animaapp.com/mloikyq0WG9Ud9/assets/icon-13.svg"
-            title="Cutting-Edge AI"
-            description="Deploy AI solutions that adapt quickly, learn fast, and scale with your business needs."
+            title="AI-Powered Customer Support"
+            description="Chatbots, FAQ bases, and lead capture systems that engage customers immediately."
             graphicSrc="https://c.animaapp.com/mloikyq0WG9Ud9/assets/2.avif"
             graphicClassName=""
             graphicSizes="max((max(min(100vw - 80px, 1200px), 300px) - 64px) / 2, 1px)"
@@ -19,8 +19,8 @@ export const FeaturesGrid = () => {
           <FeatureCard
             variant="md:grow"
             iconSrc="https://c.animaapp.com/mloikyq0WG9Ud9/assets/icon-14.svg"
-            title="Automated Workflows"
-            description="Streamline tasks and boost efficiency with powerful, scalable AI-powered automation tools for growing teams and projects."
+            title="Workflow Automation"
+            description="Reduce manual work with automated KPI tracking, internal tools, and streamlined logic."
           />
         </div>
       </div>
@@ -29,16 +29,16 @@ export const FeaturesGrid = () => {
           <FeatureCard
             variant="md:grow"
             iconSrc="https://c.animaapp.com/mloikyq0WG9Ud9/assets/icon-15.svg"
-            title="Insightful Analytics"
-            description="Gain deep, real-time data insights with advanced AI analytics to guide smarter strategies, decisions, and scalable business growth."
+            title="Custom AI Integrations"
+            description="Build advanced AI features into your SaaS platform, like search, copilots, or RAG workflows."
           />
         </div>
         <div className="box-content caret-black block md:aspect-auto md:box-border md:caret-transparent md:contents md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
           <FeatureCard
             variant="md:grow-[1.5]"
             iconSrc="https://c.animaapp.com/mloikyq0WG9Ud9/assets/icon-16.svg"
-            title="AI-Powered Support"
-            description="Enhance customer experience with AI-driven virtual assistants available for support and engagement."
+            title="Long-term Partnerships"
+            description="We offer ongoing maintenance, AI model tuning, and continuous optimizations."
             graphicSrc="https://c.animaapp.com/mloikyq0WG9Ud9/assets/15.png"
             graphicClassName="md:aspect-[auto_800_/_1200]"
             graphicSizes="max((max(min(100vw - 80px, 1200px), 300px) - 64px) / 2, 1px)"

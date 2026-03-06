@@ -5,7 +5,8 @@ import { HeroContent } from "./HeroContent";
 
 export const Hero = () => {
   return (
-    <section id="hero" className="relative content-center items-center box-border caret-transparent gap-x-8 flex flex-col shrink-0 h-[900px] justify-center gap-y-8 w-full z-[1] overflow-hidden pt-[120px] pb-20 px-[18px] md:h-[1000px] md:pt-20 md:pb-[100px] md:px-10">
+    <section id="hero" className="relative content-center items-center box-border caret-transparent gap-x-8 flex flex-col shrink-0 h-screen min-h-[600px] justify-center gap-y-8 w-full z-[1] overflow-hidden px-6 md:px-12 lg:px-20">
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -14,8 +15,8 @@ export const Hero = () => {
       >
         <HeroContent />
       </motion.div>
-      
-      <motion.div 
+
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.2 }}

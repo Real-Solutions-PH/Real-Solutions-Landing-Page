@@ -17,8 +17,8 @@ export type BenefitsSectionProps = {
 
 export const BenefitsSection = (props: BenefitsSectionProps) => {
   return (
-    <section className="relative content-center items-center box-border caret-transparent flex flex-col shrink-0 h-min justify-center w-full z-[2] px-[18px] py-20 md:px-10 md:py-[100px] bg-neutral-100 gap-x-10 gap-y-10 overflow-hidden scroll-mt-2.5">
-      <div className="relative content-center items-center box-border caret-transparent flex flex-col shrink-0 h-min max-w-[1350px] w-full z-[2] gap-x-11 justify-center gap-y-11">
+    <section className="relative content-center items-center box-border caret-transparent flex flex-col shrink-0 h-min justify-center w-full z-[2] px-6 py-20 md:px-12 lg:px-20 md:py-[100px] bg-neutral-100 gap-x-10 gap-y-10 scroll-mt-2.5">
+      <div className="relative content-center items-center box-border caret-transparent flex flex-col shrink-0 h-min max-w-[1640px] w-full z-[2] gap-x-11 justify-center gap-y-11">
         <FadeIn>
           <SectionHeader
             iconUrl={props.iconUrl || ""}

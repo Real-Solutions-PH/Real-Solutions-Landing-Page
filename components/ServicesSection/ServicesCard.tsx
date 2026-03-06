@@ -1,3 +1,5 @@
+import { Card } from "@/components/ui/card";
+
 export type ServiceCardProps = {
   variant: string;
   title: string;
@@ -16,10 +18,10 @@ export type ServiceCardProps = {
 
 export const ServiceCard = (props: ServiceCardProps) => {
   return (
-    <div
-      className={`static box-content caret-black basis-auto grow-0 shrink h-auto min-h-0 min-w-0 w-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:basis-0 md:shrink-0 md:min-h-[auto] md:min-w-[300px] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-px md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] ${props.variant}`}
+    <Card
+      className={`group static bg-transparent border-0 shadow-none box-content caret-black basis-auto grow-0 shrink h-auto min-h-0 min-w-0 w-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:basis-0 md:shrink-0 md:min-h-[auto] md:min-w-[300px] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-px md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] ${props.variant}`}
     >
-      <div className="static [align-items:normal] bg-transparent shadow-none box-content caret-black gap-x-[normal] block flex-row h-auto justify-normal gap-y-[normal] w-auto rounded-none md:relative md:content-center md:items-center md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:gap-x-0 md:flex md:flex-col md:h-full md:justify-end md:overscroll-x-auto md:overscroll-y-auto md:gap-y-0 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-[20px]">
+      <div className="static [align-items:normal] bg-transparent shadow-none box-content caret-black gap-x-[normal] block flex-row h-auto justify-normal gap-y-[normal] w-auto rounded-none md:relative md:content-center md:items-center md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:gap-x-0 md:flex md:flex-col md:h-full md:justify-end md:overscroll-x-auto md:overscroll-y-auto md:gap-y-0 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-[20px] group-hover:shadow-[0_0_20px_rgba(0,180,216,0.2)] group-hover:scale-[1.02] transition-all duration-300">
         {props.variant === "md:grow md:h-[374px]" && (
           <>
             <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none transform-none z-auto left-auto top-auto md:absolute md:aspect-[23_/_1] md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:rotate-[35.9999881159815deg] md:w-[137px] md:z-[1] md:overflow-hidden md:left-[91px] md:top-[91px]"></div>
@@ -212,6 +214,6 @@ export const ServiceCard = (props: ServiceCardProps) => {
           </>
         )}
       </div>
-    </div>
+    </Card>
   );
 };
