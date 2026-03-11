@@ -23,9 +23,11 @@ export const HeroContent = () => {
           </p>
         </div>
         <div className="flex gap-4">
-          <Button>
-            Contact Us <ArrowUpRight size={16} />
-          </Button>
+          <Link href="mailto:contact.realsolutionsph@gmail.com">
+            <Button>
+              Contact Us <ArrowUpRight size={16} />
+            </Button>
+          </Link>
           <Link href="#services">
             <Button variant="secondary">See Our Services</Button>
           </Link>

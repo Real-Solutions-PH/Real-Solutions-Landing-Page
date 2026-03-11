@@ -5,7 +5,7 @@ import { TeamCarousel } from "./TeamCarousel";
 export const TeamSection = () => {
   return (
     <section
-      id="team"
+      id="teams"
       className="relative flex flex-col items-center justify-center w-full px-6 py-20 bg-neutral-100 md:px-12 lg:px-20 md:py-[100px] scroll-mt-2.5 overflow-hidden"
     >
       <div className="relative flex flex-col items-center w-full max-w-[1240px] gap-12 sm:gap-16 z-[2]">

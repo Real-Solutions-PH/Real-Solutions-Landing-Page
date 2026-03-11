@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Globe, Linkedin } from "lucide-react";
+import Link from "next/link";
 
 export type TeamMemberCardProps = {
   name: string;
@@ -32,7 +33,7 @@ export const TeamMemberCard = (props: TeamMemberCardProps) => {
       {/* Social Links */}
       <div className="flex items-center gap-2">
         {props.websiteUrl && (
-          <a
+          <Link
             href={props.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -40,9 +41,9 @@ export const TeamMemberCard = (props: TeamMemberCardProps) => {
             title="Website"
           >
             <Globe size={18} />
-          </a>
+          </Link>
         )}
-        <a
+        <Link
           href={props.linkedinUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -50,7 +51,7 @@ export const TeamMemberCard = (props: TeamMemberCardProps) => {
           title="LinkedIn"
         >
           <Linkedin size={18} />
-        </a>
+        </Link>
       </div>
 
       {/* Image Area */}

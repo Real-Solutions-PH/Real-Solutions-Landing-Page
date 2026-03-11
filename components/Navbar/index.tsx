@@ -87,34 +87,34 @@ export const Navbar = () => {
             className="fixed inset-0 z-40 bg-white pt-32 px-6 pb-6 md:hidden flex flex-col gap-6 overflow-y-auto"
           >
             <div className="flex flex-col gap-5 text-center">
-              <a
+              <Link
                 href="#services"
                 onClick={toggleMenu}
                 className="py-2 border-gray-100"
               >
                 Services
-              </a>
-              <a
-                href="#team"
+              </Link>
+              <Link
+                href="#teams"
                 onClick={toggleMenu}
                 className="py-2 border-gray-100"
               >
                 Team
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#faq"
                 onClick={toggleMenu}
                 className="py-2 border-gray-100"
               >
                 FAQ
-              </a>
-              <a
-                href="#contact"
+              </Link>
+              <Link
+                href="mailto:contact.realsolutionsph@gmail.com"
                 onClick={toggleMenu}
                 className="py-2 border-gray-100"
               >
                 Contact
-              </a>
+              </Link>
 
               <div>
                 <Button className="mt-4">

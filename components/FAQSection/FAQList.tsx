@@ -1,6 +1,7 @@
 import { FAQItem } from "./FAQItem";
 import { Accordion } from "@/components/ui/accordion";
 import { Mail } from "lucide-react";
+import Link from "next/link";
 
 export const FAQList = () => {
   const faqs = [
@@ -54,12 +55,12 @@ export const FAQList = () => {
         </div>
         <p className="text-sm font-medium tracking-tight">
           Feel free to mail us for any enquiries:{" "}
-          <a
+          <Link
             href="mailto:contact.realsolutionsph@gmail.com"
             className="text-neutral-900 underline underline-offset-4 hover:text-neutral-700 transition-colors"
           >
             contact.realsolutionsph@gmail.com
-          </a>
+          </Link>
         </p>
       </div>
     </div>

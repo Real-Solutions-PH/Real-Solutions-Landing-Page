@@ -1,36 +1,37 @@
 import { Button } from "@/components/ui/button";
 import { FooterLogo } from "../Logo";
 import { ArrowUpRight, Instagram, Linkedin, Facebook } from "lucide-react";
+import Link from "next/link";
 
 export const FooterContent = () => {
   return (
     <div className="flex flex-col items-center w-full max-w-[1240px] gap-8">
       {/* Social Icons */}
       <div className="flex items-center gap-6 text-neutral-500">
-        <a
+        <Link
           href="https://www.facebook.com/people/Real-Solutions-PH/61588405073622/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-neutral-900 transition-colors"
         >
           <Facebook size={20} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://www.instagram.com/realsolutions.ph/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-neutral-900 transition-colors"
         >
           <Instagram size={20} />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://linkedin.com/company/real-solutions-ph"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-neutral-900 transition-colors"
         >
           <Linkedin size={20} />
-        </a>
+        </Link>
       </div>
 
       {/* Logo & Text Section */}
