@@ -20,13 +20,13 @@ export const FAQItem = (props: FAQItemProps) => {
       <div className="static bg-none box-content caret-black shrink h-auto opacity-100 pointer-events-none w-auto z-auto left-auto top-auto md:absolute md:aspect-auto md:bg-[radial-gradient(50%_50%_at_7.2%_6.1%,rgba(184,199,217,0.5)_0%,rgba(4,7,13,0)_100%)] md:box-border md:caret-transparent md:shrink-0 md:h-[306px] md:opacity-10 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[437px] md:z-[0] md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-0 md:top-0"></div>
 
       <AccordionTrigger className="hover:no-underline py-0 text-left static flex flex-row items-center justify-between min-h-0 min-w-0 w-full relative z-10 gap-4">
-        <span className="text-base font-normal tracking-[normal] leading-[normal] font-times md:leading-6 md:font-inter">
+        <span className="text-base font-normal tracking-[normal] leading-[normal]  md:leading-6 md:font-inter">
           {props.question}
         </span>
       </AccordionTrigger>
       <AccordionContent className="pt-2 pb-0 relative z-10">
         <div className="opacity-80">
-          <p className="text-base leading-[normal] font-times md:text-sm md:leading-[22.4px] md:font-inter">
+          <p className="text-base leading-[normal]  md:text-sm md:leading-[22.4px] md:font-inter">
             {props.answer}
           </p>
         </div>
