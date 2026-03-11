@@ -86,7 +86,7 @@ export const ProjectContent = ({
             </div>
 
             <div className="flex items-center gap-2 justify-end">
-              <Button size="lg">
+              <Button size="lg" className="w-full lg:w-auto">
                 Visit <ArrowRight size={16} />
               </Button>
             </div>

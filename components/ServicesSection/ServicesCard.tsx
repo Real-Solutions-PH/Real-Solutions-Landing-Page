@@ -23,7 +23,7 @@ export const ServiceCard = (props: ServiceCardProps) => {
   return (
     <Card
       className={cn(
-        "group flex flex-col relative w-full h-full min-h-[380px] p-6 sm:p-8 border border-neutral-200/50 shadow-sm transition-all duration-300 hover:shadow-lg rounded-[24px] sm:rounded-[32px] overflow-hidden bg-[#F9FAFB] justify-end",
+        "flex flex-col relative w-full h-full min-h-[380px] p-6 sm:p-8 border shrink-0 sm:shrink border-neutral-200/50 shadow-sm sm:shadow-md bg-white sm:bg-[#F9FAFB] rounded-[24px] sm:rounded-[32px] overflow-hidden justify-end hover:shadow-lg transition-all duration-300",
         isLarge ? "md:col-span-2" : "md:col-span-1",
       )}
     >
