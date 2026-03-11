@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 
 import { useState, useEffect } from "react";
 import { DesktopMenu } from "@/components/Navbar/DesktopMenu";
-import { NavbarButton } from "@/components/Navbar/NavbarButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { HeaderLogo } from "../Logo";
@@ -53,14 +52,11 @@ export const Navbar = () => {
             </div>
 
             {/* Desktop Button */}
-            <Link
-              href="mailto://contact.realsolutionsph@gmail.com"
-              className="hidden md:flex shrink-0 flex-1 justify-end"
-            >
+            <div className="hidden md:flex shrink-0 flex-1 justify-end">
               <Button>
-                Contact Us <ArrowUpRight size={16} />
+                Get Started <ArrowUpRight size={16} />
               </Button>
-            </Link>
+            </div>
 
             <div className="md:hidden z-50">
               <Button
