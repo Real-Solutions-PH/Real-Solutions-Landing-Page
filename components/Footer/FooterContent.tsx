@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { FooterLogo } from "../Logo";
-import { ArrowUpRight, Instagram, Linkedin, Twitter } from "lucide-react";
+import { ArrowUpRight, Instagram, Linkedin, Facebook } from "lucide-react";
 
 export const FooterContent = () => {
   return (
@@ -8,15 +8,15 @@ export const FooterContent = () => {
       {/* Social Icons */}
       <div className="flex items-center gap-6 text-neutral-500">
         <a
-          href="https://twitter.com/realsolutionsph"
+          href="https://www.facebook.com/people/Real-Solutions-PH/61588405073622/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-neutral-900 transition-colors"
         >
-          <Twitter size={20} />
+          <Facebook size={20} />
         </a>
         <a
-          href="https://instagram.com/realsolutionsph"
+          href="https://www.instagram.com/realsolutions.ph/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-neutral-900 transition-colors"

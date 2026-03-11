@@ -66,7 +66,7 @@ export const Navbar = () => {
               >
                 <button
                   onClick={toggleMenu}
-                  className="p-2 text-black bg-white/50 rounded-full backdrop-blur-sm border border-black/5"
+                  className="p-2 text-black bg-white/50 rounded-full backdrop-blur-sm border border-black/15"
                 >
                   {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -84,45 +84,43 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-white pt-24 px-6 pb-6 md:hidden flex flex-col gap-6 overflow-y-auto"
+            className="fixed inset-0 z-40 bg-white pt-32 px-6 pb-6 md:hidden flex flex-col gap-6 overflow-y-auto"
           >
-            <div className="flex flex-col gap-6 text-center">
+            <div className="flex flex-col gap-5 text-center">
               <a
                 href="#services"
                 onClick={toggleMenu}
-                className="py-2 border-b border-gray-100"
+                className="py-2 border-gray-100"
               >
                 Services
               </a>
               <a
                 href="#team"
                 onClick={toggleMenu}
-                className="py-2 border-b border-gray-100"
+                className="py-2 border-gray-100"
               >
                 Team
               </a>
               <a
                 href="#faq"
                 onClick={toggleMenu}
-                className="py-2 border-b border-gray-100"
+                className="py-2 border-gray-100"
               >
                 FAQ
               </a>
               <a
                 href="#contact"
                 onClick={toggleMenu}
-                className="py-2 border-b border-gray-100"
+                className="py-2 border-gray-100"
               >
                 Contact
               </a>
-              <Link
-                href="mailto://contact.realsolutionsph@gmail.com"
-                className="mt-4"
-              >
-                <Button>
-                  Contact Us <ArrowUpRight size={16} />
+
+              <div>
+                <Button className="mt-4">
+                  Get Started <ArrowUpRight size={16} />
                 </Button>
-              </Link>
+              </div>
             </div>
           </motion.div>
         )}

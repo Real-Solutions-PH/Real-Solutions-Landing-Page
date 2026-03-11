@@ -49,8 +49,7 @@ export const ProjectContent = ({
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                // className="text-2xl md:text-3xl lg:text-[32px] md:leading-[1.2] font-medium text-black font-satoshi"
-                className="text-base font-normal box-content caret-black tracking-[normal] leading-[normal] min-h-0 min-w-0 text-start break-normal  md:text-xl md:font-medium md:aspect-auto md:box-border md:caret-transparent md:tracking-[-0.2px] md:leading-6 md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-left md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-satoshi"
+                className="md:text-xl md:leading-[1.2] font-medium"
               >
                 {activeProject.title}
               </motion.h3>
@@ -86,7 +85,7 @@ export const ProjectContent = ({
             </div>
 
             <div className="flex items-center gap-2 justify-end">
-              <Button size="lg" className="w-full lg:w-auto">
+              <Button size="lg" className="w-full lg:w-auto !shadow-none">
                 Visit <ArrowRight size={16} />
               </Button>
             </div>

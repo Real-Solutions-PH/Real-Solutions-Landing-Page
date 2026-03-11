@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui/card";
 import { Globe, Linkedin } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export type TeamMemberCardProps = {
   name: string;
@@ -19,7 +18,7 @@ export const TeamMemberCard = (props: TeamMemberCardProps) => {
     .toUpperCase();
 
   return (
-    <Card className="flex flex-col relative w-full h-full min-h-[360px] p-6 sm:p-8 border shrink-0 sm:shrink border-neutral-200/50 shadow-sm sm:shadow-md bg-white sm:bg-[#F9FAFB] rounded-[24px] sm:rounded-[32px] overflow-hidden justify-end hover:shadow-lg transition-all duration-300 gap-5">
+    <Card className="flex flex-col relative w-full h-full min-h-[360px] p-6 border shrink-0 sm:shrink border-neutral-200/50 shadow-sm sm:shadow-md bg-white sm:bg-[#F9FAFB] rounded-[24px] sm:rounded-[32px] overflow-hidden justify-end hover:shadow-lg transition-all duration-300 gap-5">
       {/* Header Info */}
       <div className="flex flex-col gap-0.5">
         <h3 className="text-[1.25rem] sm:text-xl font-semibold tracking-tight text-neutral-900 leading-tight group-hover:text-neutral-800 transition-colors">

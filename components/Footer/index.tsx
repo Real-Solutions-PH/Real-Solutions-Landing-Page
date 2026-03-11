@@ -7,9 +7,9 @@ export const Footer = () => {
   return (
     <footer
       id="footer"
-      className="relative flex flex-col items-center justify-center w-full bg-white px-6 pt-32 pb-10 overflow-hidden"
+      className="relative flex flex-col items-center justify-center w-full px-6 pt-20 md:pt-32 pb-10 overflow-hidden"
     >
-      <div className="relative flex flex-col items-center w-full max-w-[1240px] z-[2]">
+      <div className="relative flex flex-col gap-2 items-center w-full max-w-[1240px] z-[2]">
         <FooterContent />
         <FooterLinks />
         <div className="flex items-center justify-center text-center">

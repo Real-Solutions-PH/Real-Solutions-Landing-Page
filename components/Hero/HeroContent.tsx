@@ -12,7 +12,7 @@ export const HeroContent = () => {
           <Sparkle size={14} /> AI & SOFTWARE SOLUTIONS
         </Badge>
         <div className="flex flex-col items-center justify-center gap-5">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center gap-3">
             <Logo />
             <h1 className="text-[40px] box-border caret-transparent tracking-[-2.4px] leading-[48px] text-left text-nowrap font-inter md:text-[60px] lg:text-[100px] md:tracking-[-4px] lg:tracking-[-6px] md:leading-[80px] lg:leading-[120px]">
               Real Solutions PH
