@@ -13,7 +13,7 @@ export const Hero = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="z-[4] w-full flex justify-center"
+        className="z-[4] w-full flex justify-center max-w-[1240px]"
       >
         <HeroContent />
       </motion.div>

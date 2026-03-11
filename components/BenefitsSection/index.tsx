@@ -2,7 +2,6 @@ import { FadeIn } from "@/utils/animation";
 import { SectionHeader } from "../SectionHeader";
 import { BenefitsGrid } from "./BenefitsGrid";
 
-
 export type BenefitsSectionProps = {
   variant: string;
   iconUrl?: string;
@@ -18,7 +17,7 @@ export type BenefitsSectionProps = {
 export const BenefitsSection = (props: BenefitsSectionProps) => {
   return (
     <section className="relative content-center items-center box-border caret-transparent flex flex-col shrink-0 h-min justify-center w-full z-[2] px-6 py-20 md:px-12 lg:px-20 md:py-[100px] bg-neutral-100 gap-x-10 gap-y-10 scroll-mt-2.5">
-      <div className="relative content-center items-center box-border caret-transparent flex flex-col shrink-0 h-min max-w-[1640px] w-full z-[2] gap-x-11 justify-center gap-y-11">
+      <div className="relative items-center flex flex-col w-full z-[2] justify-center gap-10 max-w-[1240px]">
         <FadeIn>
           <SectionHeader
             iconUrl={props.iconUrl || ""}
@@ -27,7 +26,7 @@ export const BenefitsSection = (props: BenefitsSectionProps) => {
             description={props.description || ""}
           />
         </FadeIn>
-        <FadeIn delay={0.2}>
+        <FadeIn delay={0.2} fullWidth>
           <BenefitsGrid />
         </FadeIn>
       </div>

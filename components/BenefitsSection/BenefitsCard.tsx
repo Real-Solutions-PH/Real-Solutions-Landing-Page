@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 export type BenefitCardProps = {
   variant: string;
@@ -20,30 +21,32 @@ export type BenefitCardProps = {
 export const BenefitCard = (props: BenefitCardProps) => {
   if (props.variant === "variant1") {
     return (
-      <Card className="w-full h-full min-h-[360px] border-0 shadow-none bg-transparent flex flex-col">
-        <div className="static box-content caret-black w-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] bg-transparent shadow-none gap-x-[normal] block flex-row h-auto justify-normal gap-y-[normal] rounded-none md:relative md:content-center md:items-center md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:gap-x-0 md:flex md:flex-col md:h-full md:justify-end md:gap-y-0 md:w-full md:overflow-hidden md:rounded-[20px]">
-          <div className="static bg-transparent shadow-none box-content caret-black shrink w-auto rounded-none md:absolute md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] transform-none z-auto left-auto top-auto md:aspect-square md:translate-x-[-50.0%] md:w-44 md:z-[1] md:rounded-[100px] md:left-2/4 md:top-[27px]">
-            <div className="static bg-transparent shadow-none box-content caret-black shrink h-auto transform-none origin-[50%_50%] w-auto rounded-none left-auto top-auto md:absolute md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.2)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.19)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.18)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.17)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.13)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.05)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:h-[87px] md:left-[calc(51.7045%_-_8px)] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:rotate-[42.85933814398134deg] md:origin-[61%_80%] md:w-4 md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-[100px] md:top-[22px]">
-              <div className="static [align-items:normal] bg-transparent shadow-none box-content caret-black gap-x-[normal] block shrink justify-normal gap-y-[normal] rounded-none bottom-auto inset-x-auto md:absolute md:content-center md:items-center md:aspect-square md:bg-black/40 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px] md:box-border md:caret-transparent md:gap-x-6 md:flex md:shrink-0 md:justify-center md:overscroll-x-auto md:overscroll-y-auto md:gap-y-6 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-[100px] md:left-0 md:right-px md:bottom-0">
-                <div className="static bg-transparent box-content caret-black shrink min-h-0 min-w-0 w-auto rounded-none md:relative md:aspect-square md:bg-black md:box-border md:caret-transparent md:shrink-0 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[7px] md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-[100px]"></div>
-              </div>
+      <Card className="flex flex-col relative w-full h-full min-h-[360px] p-6 sm:p-8 border shrink-0 sm:shrink border-neutral-200/50 shadow-sm sm:shadow-md bg-white sm:bg-[#F9FAFB] rounded-[24px] sm:rounded-[32px] overflow-hidden justify-end hover:shadow-lg transition-all duration-300">
+        {/* Visual Graphic */}
+        <div className="absolute inset-x-0 top-0 bottom-32 flex items-center justify-center px-6">
+          <div className="relative w-36 h-36 sm:w-48 sm:h-48 rounded-full bg-[#F3F4F6] shadow-[inset_0px_2px_4px_rgba(255,255,255,0.8),0px_8px_20px_rgba(0,0,0,0.06)] flex items-center justify-center border border-white/40">
+            {/* Clock Hand wrapper to allow rotation */}
+            <div className="absolute w-full h-full rotate-45 transform">
+              {/* Arm stem */}
+              <div className="absolute bottom-1/2 left-1/2 -translate-x-1/2 w-4 sm:w-5 h-[4.5rem] sm:h-[6rem] bg-[#F3F4F6] shadow-[inset_0px_2px_4px_rgba(255,255,255,0.8),0px_4px_10px_rgba(0,0,0,0.1)] rounded-full border border-white/50" />
+              {/* Clock Arm end Circle */}
+              <div className="absolute top-[calc(50%-4.5rem)] sm:top-[calc(50%-6rem)] left-1/2 -translate-x-1/2 w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full shadow-md border border-neutral-100 flex items-center justify-center" />
             </div>
-            <div className="static bg-transparent shadow-none box-content caret-black shrink opacity-100 w-auto z-auto rounded-none left-auto top-auto md:absolute md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:opacity-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-5 md:z-[1] md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-[100px] md:left-10 md:top-[35px]"></div>
-            <div className="static bg-transparent shadow-none box-content caret-black shrink w-auto z-auto rounded-none right-auto top-auto md:absolute md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-5 md:z-[1] md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-[100px] md:right-[50px] md:top-[25px]"></div>
-            <div className="static bg-transparent shadow-none box-content caret-black shrink opacity-100 w-auto z-auto rounded-none right-auto bottom-auto md:absolute md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:opacity-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-5 md:z-[1] md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-[100px] md:right-[34px] md:bottom-[45px]"></div>
-          </div>
-          <div className="static box-content caret-black shrink h-auto w-auto md:aspect-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] gap-x-[normal] block flex-row justify-normal min-h-0 min-w-0 gap-y-[normal] md:relative md:content-center md:items-center md:gap-x-2.5 md:flex md:flex-col md:h-min md:justify-start md:min-h-[auto] md:min-w-[auto] md:gap-y-2.5 md:w-full md:p-[30px]">
-            <div className="static box-content caret-black block flex-row shrink justify-normal min-h-0 min-w-0 md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] w-auto break-normal md:break-words md:w-full">
-              <p className="font-normal box-content caret-black leading-[normal] min-h-0 min-w-0  md:font-medium md:aspect-auto md:box-border md:caret-transparent md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-satoshi text-base tracking-[normal] text-start break-normal md:text-xl md:tracking-[-0.2px] md:leading-6 md:break-words md:text-left">
-                {props.title}
-              </p>
-            </div>
-            <div className="static box-content caret-black block flex-row shrink justify-normal min-h-0 min-w-0 opacity-100 w-auto break-normal md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:min-h-[auto] md:min-w-[auto] md:opacity-80 md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-              <p className="text-base box-content caret-black leading-[normal] min-h-0 min-w-0 text-start break-normal  md:aspect-auto md:box-border md:caret-transparent md:leading-6 md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-left md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-inter">
-                {props.description}
-              </p>
+            {/* Center Dot */}
+            <div className="w-4 h-4 sm:w-[22px] sm:h-[22px] bg-neutral-800 rounded-full z-10 shadow-md border border-white/20 flex items-center justify-center">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-black rounded-full"></div>
             </div>
           </div>
+        </div>
+
+        {/* Text Content */}
+        <div className="relative z-10 mt-auto flex flex-col gap-2 sm:gap-3">
+          <h3 className="text-[1.35rem] sm:text-2xl font-semibold tracking-tight text-neutral-900 leading-tight">
+            {props.title}
+          </h3>
+          <p className="text-neutral-500 text-sm sm:text-[15px] leading-relaxed">
+            {props.description}
+          </p>
         </div>
       </Card>
     );
@@ -51,50 +54,46 @@ export const BenefitCard = (props: BenefitCardProps) => {
 
   if (props.variant === "variant2") {
     return (
-      <Card className="w-full h-full min-h-[360px] relative box-border caret-transparent overscroll-auto bg-neutral-100 shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] flex flex-col justify-end overflow-hidden rounded-[20px] border-0">
-        <div className="static box-content caret-black w-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] shrink h-auto z-auto left-auto top-auto md:absolute md:aspect-auto md:shrink-0 md:h-[232px] md:left-[calc(50%_-_110px)] md:top-[-25px] md:w-[220px] md:z-[1]">
-          <div className="static bg-transparent shadow-none box-content caret-black shrink w-auto rounded-none md:absolute md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] h-auto right-auto bottom-auto md:aspect-auto md:h-[102px] md:w-[43px] md:rounded-lg md:right-[59px] md:bottom-0"></div>
-          <div className="static box-content caret-black shrink h-auto w-auto md:aspect-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none rounded-none right-auto bottom-auto md:absolute md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:h-[75px] md:w-[43px] md:overflow-hidden md:rounded-lg md:right-0 md:bottom-0"></div>
-          <div className="static bg-transparent shadow-none box-content caret-black shrink h-auto w-auto rounded-none left-auto bottom-auto md:absolute md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:h-[159px] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[43px] md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-lg md:left-[59px] md:bottom-0"></div>
-          <div className="static bg-transparent shadow-none box-content caret-black shrink h-auto w-auto rounded-none left-auto bottom-auto md:absolute md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:h-[75px] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[43px] md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-lg md:left-0 md:bottom-0"></div>
-        </div>
-        <div className="static [align-items:normal] box-content caret-black gap-x-[normal] block shrink h-auto justify-normal gap-y-[normal] w-auto md:content-center md:items-center md:aspect-auto md:box-border md:caret-transparent md:flex md:shrink-0 md:h-min md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] flex-row min-h-0 min-w-0 md:relative md:gap-x-2 md:flex-col md:justify-start md:min-h-[auto] md:min-w-[auto] md:gap-y-2 md:w-full md:p-[30px]">
-          <div className="static box-content caret-black block flex-row shrink justify-normal min-h-0 min-w-0 md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] w-auto break-normal md:break-words md:w-full">
-            <p className="font-normal box-content caret-black leading-[normal] min-h-0 min-w-0  md:font-medium md:aspect-auto md:box-border md:caret-transparent md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-satoshi text-base tracking-[normal] text-start break-normal md:text-xl md:tracking-[-0.2px] md:leading-6 md:break-words md:text-left">
-              {props.title}
-            </p>
-          </div>
-          <div className="static box-content caret-black block flex-row shrink justify-normal min-h-0 min-w-0 opacity-100 w-auto break-normal md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:min-h-[auto] md:min-w-[auto] md:opacity-80 md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-            <p className="text-base box-content caret-black leading-[normal] min-h-0 min-w-0 text-start break-normal  md:aspect-auto md:box-border md:caret-transparent md:leading-6 md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-left md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-inter">
-              {props.description}
-            </p>
-          </div>
-        </div>
-        <div className="static [align-items:normal] box-content caret-black gap-x-[normal] block shrink h-auto justify-normal gap-y-[normal] w-auto md:content-center md:items-center md:aspect-auto md:box-border md:caret-transparent md:flex md:shrink-0 md:h-min md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none p-0 rounded-none left-auto top-auto md:absolute md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:gap-x-6 md:justify-center md:gap-y-6 md:w-min md:px-4 md:py-1 md:rounded-[100px] md:left-[79px] md:top-[15px]">
-          <div className="static box-content caret-black block flex-row shrink justify-normal min-h-0 min-w-0 text-wrap z-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:text-nowrap md:z-[1] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-            <p className="font-normal box-content caret-black leading-[normal] min-h-0 min-w-0 text-wrap  md:font-medium md:aspect-auto md:box-border md:caret-transparent md:leading-[14.4px] md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:text-nowrap md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-satoshi">
-              {props.badge1Text}
-            </p>
-          </div>
-        </div>
-        <div className="static bg-transparent shadow-none box-content caret-black shrink w-auto rounded-none right-auto top-auto md:absolute md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] gap-x-[normal] block h-auto justify-normal gap-y-[normal] p-0 md:content-center md:items-center md:aspect-auto md:gap-x-6 md:flex md:h-min md:justify-center md:gap-y-6 md:w-min md:px-4 md:py-1 md:rounded-[100px] md:right-[31px] md:top-[100px]">
-          <div className="static box-content caret-black block flex-row shrink justify-normal min-h-0 min-w-0 text-wrap z-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:text-nowrap md:z-[1] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-            <p className="font-normal box-content caret-black leading-[normal] min-h-0 min-w-0 text-wrap  md:font-medium md:aspect-auto md:box-border md:caret-transparent md:leading-[14.4px] md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:text-nowrap md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-satoshi">
-              {props.badge2Text}
-            </p>
+      <Card className="flex flex-col relative w-full h-full min-h-[360px] p-6 sm:p-8 border shrink-0 sm:shrink border-neutral-200/50 shadow-sm sm:shadow-md bg-white sm:bg-[#F9FAFB] rounded-[24px] sm:rounded-[32px] overflow-hidden justify-end hover:shadow-lg transition-all duration-300">
+        {/* Visual Graphic */}
+        <div className="absolute inset-x-0 top-0 bottom-32 flex items-center justify-center pt-8">
+          <div className="relative w-full max-w-[200px] sm:max-w-[240px] h-[140px] flex items-end justify-between px-2 gap-2 sm:gap-4">
+            {/* Bars */}
+            <div className="relative w-8 sm:w-10 h-10 bg-white rounded-[10px] shadow-sm border border-neutral-100/50 hover:h-12 transition-all duration-500 cursor-pointer">
+              <div className="absolute -left-10 sm:-left-12 top-1/2 -translate-y-1/2 -rotate-90 text-[9px] sm:text-[10px] font-bold text-neutral-400 tracking-wider">
+                {props.beforeText}
+              </div>
+            </div>
+
+            <div className="relative w-8 sm:w-10 h-16 bg-white rounded-[10px] shadow-sm border border-neutral-100/50 hover:h-20 transition-all duration-500 cursor-pointer"></div>
+
+            <div className="relative w-8 sm:w-10 h-[104px] sm:h-[120px] bg-white rounded-[10px] shadow-[0px_4px_16px_rgba(0,0,0,0.08)] border border-neutral-100 z-10 hover:h-[130px] transition-all duration-500 cursor-pointer">
+              <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs font-semibold text-neutral-700 shadow-lg whitespace-nowrap border border-neutral-100 font-satoshi flex items-center justify-center">
+                {props.badge1Text}
+              </div>
+            </div>
+
+            <div className="relative w-8 sm:w-10 h-20 bg-white rounded-[10px] shadow-sm border border-neutral-100/50 hover:h-24 transition-all duration-500 cursor-pointer"></div>
+
+            <div className="relative w-8 sm:w-10 h-[56px] bg-white rounded-[10px] shadow-sm border border-neutral-100/50 hover:h-16 transition-all duration-500 cursor-pointer">
+              <div className="absolute -right-1 top-1/2 sm:-top-2 bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs font-semibold text-neutral-700 shadow-md whitespace-nowrap translate-x-3/4 sm:translate-x-full -translate-y-[120%] sm:-translate-y-1/2 border border-neutral-100 font-satoshi flex items-center justify-center">
+                {props.badge2Text}
+              </div>
+              <div className="absolute -right-8 sm:-right-10 top-1/2 -translate-y-1/2 -rotate-90 text-[9px] sm:text-[10px] font-bold text-neutral-400 tracking-wider">
+                {props.afterText}
+              </div>
+            </div>
           </div>
         </div>
-        <div className="static [align-items:normal] bg-transparent shadow-none box-content caret-black gap-x-[normal] block shrink h-auto justify-normal min-h-0 min-w-0 gap-y-[normal] transform-none w-auto p-0 rounded-none left-auto top-auto md:absolute md:content-center md:items-center md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:gap-x-6 md:flex md:shrink-0 md:h-min md:justify-center md:left-[-13px] md:min-h-3.5 md:min-w-[91px] md:overscroll-x-auto md:overscroll-y-auto md:gap-y-6 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:-translate-y-3 md:-rotate-90 md:w-min md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:px-2.5 md:py-3 md:scroll-m-0 md:scroll-p-[auto] md:rounded-[5px] md:top-[49%]">
-          <div className="static box-content caret-black block flex-row shrink justify-normal text-wrap transform-none z-auto right-auto top-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:text-nowrap md:translate-y-[-7.20312px] md:z-[1] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:right-[102px] md:top-2/4">
-            <p className="font-normal box-content caret-black leading-[normal] min-h-0 min-w-0 text-wrap  md:font-medium md:aspect-auto md:box-border md:caret-transparent md:leading-[14.4px] md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:text-nowrap md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-satoshi">
-              {props.beforeText}
-            </p>
-          </div>
-          <div className="static box-content caret-black block flex-row shrink justify-normal text-wrap transform-none z-auto right-auto top-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:text-nowrap md:translate-y-[-7.20312px] md:z-[1] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:right-[27px] md:top-2/4">
-            <p className="font-normal box-content caret-black leading-[normal] min-h-0 min-w-0 text-wrap  md:font-medium md:aspect-auto md:box-border md:caret-transparent md:leading-[14.4px] md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:text-nowrap md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-satoshi">
-              {props.afterText}
-            </p>
-          </div>
+
+        {/* Text Content */}
+        <div className="relative z-10 mt-auto flex flex-col gap-2 sm:gap-3">
+          <h3 className="text-[1.35rem] sm:text-2xl font-semibold tracking-tight text-neutral-900 leading-tight">
+            {props.title}
+          </h3>
+          <p className="text-neutral-500 text-sm sm:text-[15px] leading-relaxed">
+            {props.description}
+          </p>
         </div>
       </Card>
     );
@@ -102,106 +101,86 @@ export const BenefitCard = (props: BenefitCardProps) => {
 
   if (props.variant === "variant3") {
     return (
-      <Card className="w-full h-full min-h-[360px] relative box-border caret-transparent overscroll-auto bg-neutral-100 shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] flex flex-col justify-end overflow-hidden rounded-[20px] border-0">
-        <div className="static box-content caret-black w-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none shrink transform-none z-auto rounded-none left-auto top-auto md:absolute md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.16)_0px_0.636953px_0.636953px_-1px,rgba(0,0,0,0.15)_0px_1.9316px_1.9316px_-2px,rgba(0,0,0,0.13)_0px_5.10612px_5.10612px_-3px,rgba(0,0,0,0.04)_0px_16px_16px_-4px,rgba(227,227,227,0.46)_0px_-3px_1px_0px_inset] md:shrink-0 md:translate-x-[-50.0%] md:w-[154px] md:z-[2] md:overflow-hidden md:rounded-[100px] md:left-2/4 md:top-[3px]"></div>
-        <div className="static [align-items:normal] box-content caret-black gap-x-[normal] block shrink h-auto justify-normal gap-y-[normal] w-auto md:content-center md:items-center md:aspect-auto md:box-border md:caret-transparent md:flex md:shrink-0 md:h-min md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none transform-none z-auto rounded-none left-auto top-auto md:absolute md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:gap-x-6 md:justify-center md:gap-y-6 md:translate-x-[-50.0%] md:w-min md:z-[4] md:p-[9px] md:rounded-[100px] md:left-2/4 md:top-[11px]">
-          <div className="static box-content caret-black shrink min-h-0 min-w-0 w-auto md:relative md:box-border md:caret-transparent md:shrink-0 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none z-auto rounded-none md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:w-[102px] md:z-[2] md:overflow-hidden md:rounded-[100px]">
-            <div className="static box-content caret-black shrink transform-none w-auto left-auto top-auto md:absolute md:aspect-square md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:translate-x-[-50.0%] md:translate-y-[-50.0%] md:w-16 md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-[48%] md:top-2/4">
-              <div className="static box-content caret-black inset-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:inset-0">
-                <img
-                  sizes="64px"
-                  src={props.logoUrl}
-                  alt={props.logoAlt}
-                  className="box-content caret-black h-auto object-fill align-middle w-auto md:aspect-[auto_154_/_110] md:box-border md:caret-transparent md:h-full md:object-contain md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
-                />
+      <Card className="flex flex-col relative w-full h-full min-h-[360px] p-6 sm:p-8 border shrink-0 sm:shrink border-neutral-200/50 shadow-sm sm:shadow-md bg-white sm:bg-[#F9FAFB] rounded-[24px] sm:rounded-[32px] overflow-hidden justify-end hover:shadow-lg transition-all duration-300">
+        {/* Visual Graphic */}
+        <div className="absolute inset-x-0 top-0 bottom-32 flex items-center justify-center">
+          <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-[#F3F4F6] shadow-[inset_0px_2px_4px_rgba(255,255,255,0.8),0px_8px_20px_rgba(0,0,0,0.06)] flex items-center justify-center group">
+            <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-white shadow-xl flex items-center justify-center border border-neutral-50 transition-transform duration-700 group-hover:scale-[1.05]">
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white shadow-[0_4px_12px_rgba(0,0,0,0.08)] flex items-center justify-center transition-transform duration-500 delay-75 group-hover:scale-110">
+                {props.logoUrl && (
+                  <img
+                    src={props.logoUrl}
+                    alt={props.logoAlt || "logo"}
+                    className="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-md transition-transform duration-500 group-hover:rotate-[360deg]"
+                  />
+                )}
               </div>
             </div>
           </div>
         </div>
-        <div className="static [align-items:normal] box-content caret-black gap-x-[normal] block shrink h-auto justify-normal gap-y-[normal] w-auto md:content-center md:items-center md:aspect-auto md:box-border md:caret-transparent md:flex md:shrink-0 md:h-min md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] flex-row min-h-0 min-w-0 md:relative md:gap-x-2 md:flex-col md:justify-start md:min-h-[auto] md:min-w-[auto] md:gap-y-2 md:w-full md:p-[30px]">
-          <div className="static box-content caret-black block flex-row shrink justify-normal min-h-0 min-w-0 md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] w-auto break-normal md:break-words md:w-full">
-            <p className="font-normal box-content caret-black leading-[normal] min-h-0 min-w-0  md:font-medium md:aspect-auto md:box-border md:caret-transparent md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-satoshi text-base tracking-[normal] text-start break-normal md:text-xl md:tracking-[-0.2px] md:leading-6 md:break-words md:text-left">
-              {props.title}
-            </p>
-          </div>
-          <div className="static box-content caret-black block flex-row shrink justify-normal min-h-0 min-w-0 opacity-100 w-auto break-normal md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:min-h-[auto] md:min-w-[auto] md:opacity-80 md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-            <p className="text-base box-content caret-black leading-[normal] min-h-0 min-w-0 text-start break-normal  md:aspect-auto md:box-border md:caret-transparent md:leading-6 md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-left md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-inter">
-              {props.description}
-            </p>
-          </div>
+
+        {/* Text Content */}
+        <div className="relative z-10 mt-auto flex flex-col gap-2 sm:gap-3">
+          <h3 className="text-[1.35rem] sm:text-2xl font-semibold tracking-tight text-neutral-900 leading-tight">
+            {props.title}
+          </h3>
+          <p className="text-neutral-500 text-sm sm:text-[15px] leading-relaxed">
+            {props.description}
+          </p>
         </div>
-        <div className="static bg-transparent shadow-none box-content caret-black shrink w-auto rounded-none right-auto top-auto md:absolute md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] transform-none z-auto md:aspect-square md:translate-y-[-26px] md:w-[52px] md:z-[2] md:overflow-hidden md:rounded-2xl md:scale-0 md:right-[175px] md:top-[53%]"></div>
       </Card>
     );
   }
 
   if (props.variant === "variant4") {
     return (
-      <Card className="static box-content caret-black h-auto w-auto md:relative md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] gap-x-[normal] block flex-row shrink justify-normal min-h-0 min-w-0 gap-y-[normal] md:content-center md:items-center md:aspect-auto md:gap-x-0 md:flex md:flex-col md:shrink-0 md:h-min md:justify-center md:min-h-[auto] md:min-w-[auto] md:gap-y-0 md:w-full border-0 bg-transparent shadow-none">
-        <div className="static box-content caret-black w-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] shrink h-auto max-w-none min-h-0 min-w-0 md:relative md:aspect-auto md:shrink-0 md:h-[105px] md:max-w-screen-xl md:min-h-[auto] md:min-w-[auto] md:w-full">
-          <section className="[align-items:normal] box-content caret-black block h-auto list-disc max-h-none max-w-none w-auto md:[mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgb(0,0,0)_12.5%,rgb(0,0,0)_87.5%,rgba(0,0,0,0)_100%)] md:items-center md:aspect-auto md:box-border md:caret-transparent md:flex md:h-full md:justify-items-center md:list-none md:max-h-full md:max-w-full md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:overflow-visible md:[mask-position:0%] md:bg-left-top md:px-2.5 md:py-[40px] md:-my-[40px] md:scroll-m-0 md:scroll-p-[auto]">
-            <div className="flex w-full overflow-visible group gap-x-6">
-              <ul className="static [align-items:normal] box-content caret-black gap-x-[normal] block h-auto max-h-none max-w-none min-h-0 min-w-0 gap-y-[normal] w-auto pl-10 md:relative md:items-center md:aspect-auto md:box-border md:caret-transparent md:gap-x-6 md:flex md:h-full md:justify-items-center md:max-h-full md:max-w-full md:min-h-[auto] md:min-w-max md:overscroll-x-auto md:overscroll-y-auto md:gap-y-6 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-max md:[mask-position:0%] md:bg-left-top md:pl-0 md:scroll-m-0 md:scroll-p-[auto] animate-marquee flex-shrink-0">
-                {props.features?.map((feature, index) => (
-                  <li
-                    key={index}
-                    className="box-content caret-black h-auto min-h-0 min-w-0 md:aspect-auto md:box-border md:caret-transparent md:h-12 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
-                  >
-                    <div className="static box-content caret-black shrink h-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:shrink-0 md:h-12 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                      <div className="static [align-items:normal] bg-transparent shadow-none box-content caret-black gap-x-[normal] block h-auto justify-normal gap-y-[normal] w-auto p-0 rounded-none md:relative md:content-center md:items-center md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:gap-x-2.5 md:flex md:h-min md:justify-center md:overscroll-x-auto md:overscroll-y-auto md:gap-y-2.5 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-min md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:px-6 md:py-3 md:scroll-m-0 md:scroll-p-[auto] md:rounded-[228px]">
-                        <div className="static box-content caret-black shrink h-auto min-h-0 min-w-0 w-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:shrink-0 md:h-5 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-5 md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                          <div className="box-content caret-black block md:aspect-auto md:box-border md:caret-transparent md:contents md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                            <img
-                              src={feature.iconUrl}
-                              alt={feature.iconAlt}
-                              className="box-content caret-black block shrink h-auto align-middle w-auto md:aspect-auto md:box-border md:caret-transparent md:inline-block md:shrink-0 md:h-full md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
-                            />
-                          </div>
-                        </div>
-                        <div className="static box-content caret-black block flex-row shrink justify-normal min-h-0 min-w-0 text-wrap md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-center md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:text-nowrap md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                          <p className="text-base box-content caret-black leading-[normal] min-h-0 min-w-0 text-start text-wrap  md:aspect-auto md:box-border md:caret-transparent md:leading-6 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-center md:decoration-auto md:underline-offset-auto md:text-nowrap md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-inter">
-                            {feature.label}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <ul
-                aria-hidden="true"
-                className="static [align-items:normal] box-content caret-black gap-x-[normal] block h-auto max-h-none max-w-none min-h-0 min-w-0 gap-y-[normal] w-auto pl-10 md:relative md:items-center md:aspect-auto md:box-border md:caret-transparent md:gap-x-6 md:flex md:h-full md:justify-items-center md:max-h-full md:max-w-full md:min-h-[auto] md:min-w-max md:overscroll-x-auto md:overscroll-y-auto md:gap-y-6 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-max md:[mask-position:0%] md:bg-left-top md:pl-0 md:scroll-m-0 md:scroll-p-[auto] animate-marquee flex-shrink-0"
+      <div className="w-full relative overflow-hidden flex items-center">
+        {/* Gradients to fade out edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-neutral-100 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-neutral-100 to-transparent z-10 pointer-events-none"></div>
+
+        <div className="flex w-full overflow-hidden group gap-6 select-none bg-neutral-100 mask-image-edges">
+          {/* First set of features */}
+          <div className="flex shrink-0 animate-marquee gap-6 min-w-full justify-around items-center group-hover:[animation-play-state:paused]">
+            {props.features?.map((feature, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 sm:gap-3 bg-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-sm sm:shadow border border-neutral-200/60 shrink-0 hover:shadow-md hover:scale-[1.02] transition-all cursor-default"
               >
-                {props.features?.map((feature, index) => (
-                  <li
-                    key={`dup-${index}`}
-                    className="box-content caret-black h-auto min-h-0 min-w-0 md:aspect-auto md:box-border md:caret-transparent md:h-12 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
-                  >
-                    <div className="static box-content caret-black shrink h-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:shrink-0 md:h-12 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                      <div className="static [align-items:normal] bg-transparent shadow-none box-content caret-black gap-x-[normal] block h-auto justify-normal gap-y-[normal] w-auto p-0 rounded-none md:relative md:content-center md:items-center md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:gap-x-2.5 md:flex md:h-min md:justify-center md:overscroll-x-auto md:overscroll-y-auto md:gap-y-2.5 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-min md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:px-6 md:py-3 md:scroll-m-0 md:scroll-p-[auto] md:rounded-[228px]">
-                        <div className="static box-content caret-black shrink h-auto min-h-0 min-w-0 w-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:shrink-0 md:h-5 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-5 md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                          <div className="box-content caret-black block md:aspect-auto md:box-border md:caret-transparent md:contents md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                            <img
-                              src={feature.iconUrl}
-                              alt={feature.iconAlt}
-                              className="box-content caret-black block shrink h-auto align-middle w-auto md:aspect-auto md:box-border md:caret-transparent md:inline-block md:shrink-0 md:h-full md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
-                            />
-                          </div>
-                        </div>
-                        <div className="static box-content caret-black block flex-row shrink justify-normal min-h-0 min-w-0 text-wrap md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-center md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:text-nowrap md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                          <p className="text-base box-content caret-black leading-[normal] min-h-0 min-w-0 text-start text-wrap  md:aspect-auto md:box-border md:caret-transparent md:leading-6 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-center md:decoration-auto md:underline-offset-auto md:text-nowrap md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-inter">
-                            {feature.label}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
+                <img
+                  src={feature.iconUrl}
+                  alt={feature.iconAlt}
+                  className="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] object-contain opacity-70"
+                />
+                <span className="text-[13px] sm:text-sm font-medium text-neutral-600 tracking-tight font-inter">
+                  {feature.label}
+                </span>
+              </div>
+            ))}
+          </div>
+          {/* Second set of features for seamless loop */}
+          <div
+            className="flex shrink-0 animate-marquee gap-6 min-w-full justify-around items-center group-hover:[animation-play-state:paused]"
+            aria-hidden="true"
+          >
+            {props.features?.map((feature, index) => (
+              <div
+                key={`dup-${index}`}
+                className="flex items-center gap-2 sm:gap-3 bg-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-sm sm:shadow border border-neutral-200/60 shrink-0 hover:shadow-md hover:scale-[1.02] transition-all cursor-default my-2"
+              >
+                <img
+                  src={feature.iconUrl}
+                  alt={feature.iconAlt}
+                  className="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] object-contain opacity-70"
+                />
+                <span className="text-[13px] sm:text-sm font-medium text-neutral-600 tracking-tight font-inter">
+                  {feature.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
-      </Card>
+      </div>
     );
   }
 
