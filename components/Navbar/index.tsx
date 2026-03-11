@@ -6,8 +6,9 @@ import { useState, useEffect } from "react";
 import { DesktopMenu } from "@/components/Navbar/DesktopMenu";
 import { NavbarButton } from "@/components/Navbar/NavbarButton";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { HeaderLogo } from "../Logo";
+import Link from "next/link";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,7 +43,7 @@ export const Navbar = () => {
         >
           <div className="w-full flex items-center justify-between">
             {/* Logo */}
-            <div className="shrink-0 z-50">
+            <div className="shrink-0 z-50 flex-1">
               <HeaderLogo />
             </div>
 
@@ -52,9 +53,14 @@ export const Navbar = () => {
             </div>
 
             {/* Desktop Button */}
-            <div className="hidden md:block shrink-0">
-              <NavbarButton />
-            </div>
+            <Link
+              href="mailto://contact.realsolutionsph@gmail.com"
+              className="hidden md:flex shrink-0 flex-1 justify-end"
+            >
+              <Button>
+                Contact Us <ArrowUpRight size={16} />
+              </Button>
+            </Link>
 
             <div className="md:hidden z-50">
               <Button
@@ -88,34 +94,39 @@ export const Navbar = () => {
               <a
                 href="#services"
                 onClick={toggleMenu}
-                className="text-2xl font-medium text-black py-2 border-b border-gray-100"
+                className="py-2 border-b border-gray-100"
               >
                 Services
               </a>
               <a
                 href="#team"
                 onClick={toggleMenu}
-                className="text-2xl font-medium text-black py-2 border-b border-gray-100"
+                className="py-2 border-b border-gray-100"
               >
                 Team
               </a>
               <a
                 href="#faq"
                 onClick={toggleMenu}
-                className="text-2xl font-medium text-black py-2 border-b border-gray-100"
+                className="py-2 border-b border-gray-100"
               >
                 FAQ
               </a>
               <a
                 href="#contact"
                 onClick={toggleMenu}
-                className="text-2xl font-medium text-black py-2 border-b border-gray-100"
+                className="py-2 border-b border-gray-100"
               >
                 Contact
               </a>
-              <div className="mt-4">
-                <NavbarButton />
-              </div>
+              <Link
+                href="mailto://contact.realsolutionsph@gmail.com"
+                className="mt-4"
+              >
+                <Button>
+                  Contact Us <ArrowUpRight size={16} />
+                </Button>
+              </Link>
             </div>
           </motion.div>
         )}
