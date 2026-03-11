@@ -1,12 +1,13 @@
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 export type ServiceCardProps = {
-  variant: string;
+  variant: "variant1" | "variant2" | "variant3" | "variant4";
   title: string;
   description: string;
   logoUrl?: string;
   logoAlt?: string;
-  logoSizes?: string;
   generateButtonText?: string;
   menuItems?: string[];
   chatPlaceholder?: string;
@@ -17,202 +18,141 @@ export type ServiceCardProps = {
 };
 
 export const ServiceCard = (props: ServiceCardProps) => {
+  const isLarge = props.variant === "variant2" || props.variant === "variant3";
+
   return (
     <Card
-      className={`group static bg-transparent border-0 shadow-none box-content caret-black basis-auto grow-0 shrink h-auto min-h-0 min-w-0 w-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:basis-0 md:shrink-0 md:min-h-[auto] md:min-w-[300px] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-px md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] ${props.variant}`}
+      className={cn(
+        "flex flex-col relative w-full h-full min-h-[380px] p-6 sm:p-8 border shrink-0 sm:shrink border-neutral-200/50 shadow-sm sm:shadow-md bg-white sm:bg-[#F9FAFB] rounded-[24px] sm:rounded-[32px] overflow-hidden justify-end hover:shadow-lg transition-all duration-300",
+        isLarge ? "md:col-span-2" : "md:col-span-1",
+      )}
     >
-      <div className="static [align-items:normal] bg-transparent shadow-none box-content caret-black gap-x-[normal] block flex-row h-auto justify-normal gap-y-[normal] w-auto rounded-none md:relative md:content-center md:items-center md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:gap-x-0 md:flex md:flex-col md:h-full md:justify-end md:overscroll-x-auto md:overscroll-y-auto md:gap-y-0 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-[20px] group-hover:shadow-[0_0_20px_rgba(0,180,216,0.2)] group-hover:scale-[1.02] transition-all duration-300">
-        {props.variant === "md:grow md:h-[374px]" && (
-          <>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none transform-none z-auto left-auto top-auto md:absolute md:aspect-[23_/_1] md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:rotate-[35.9999881159815deg] md:w-[137px] md:z-[1] md:overflow-hidden md:left-[91px] md:top-[91px]"></div>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none z-auto rounded-none left-auto top-auto md:absolute md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:w-[124px] md:z-[2] md:overflow-hidden md:rounded-[100px] md:left-[184px] md:top-[94px]">
-              <div className="static box-content caret-black shrink md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] transform-none w-auto left-auto top-auto md:absolute md:aspect-square md:translate-x-[-50.0%] md:translate-y-[-50.0%] md:w-[58px] md:left-[48%] md:top-2/4">
-                <div className="static box-content caret-black md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] inset-auto md:absolute md:inset-0">
-                  <img
-                    sizes={props.logoSizes}
-                    src={props.logoUrl}
-                    alt={props.logoAlt}
-                    className="box-content caret-black h-auto object-fill align-middle w-auto md:aspect-[auto_154_/_110] md:box-border md:caret-transparent md:h-full md:object-contain md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
-                  />
-                </div>
-              </div>
+      {/* Visual Graphics Container */}
+      <div className="absolute inset-x-0 top-0 bottom-32 flex items-center justify-center p-6 overflow-hidden pointer-events-none">
+        {/* VARIANT 1: AI Customer Support Stack */}
+        {props.variant === "variant1" && (
+          <div className="relative w-full h-full flex items-center justify-center">
+            {/* Background floating circles */}
+            <div className="absolute top-[10%] left-[15%] w-16 h-16 rounded-full bg-white shadow-sm border border-neutral-100/50 opacity-40" />
+            <div className="absolute bottom-[20%] left-[10%] w-8 h-8 rounded-full bg-white shadow-sm border border-neutral-100/50 opacity-60" />
+            <div className="absolute top-[15%] right-[10%] w-10 h-10 rounded-full bg-white shadow-sm border border-neutral-100/50" />
+
+            {/* Connecting line */}
+            <div className="absolute w-[120px] h-[2px] bg-neutral-200/50 -rotate-45 -translate-x-12 -translate-y-6" />
+
+            {/* Main Center Logo */}
+            <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] flex items-center justify-center border border-white/40 group-hover:scale-105 transition-transform duration-500">
+              {props.logoUrl && (
+                <img
+                  src={props.logoUrl}
+                  alt={props.logoAlt}
+                  className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                />
+              )}
             </div>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none z-auto rounded-none left-auto top-auto md:absolute md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:w-[84px] md:z-[2] md:overflow-hidden md:rounded-[100px] md:left-[60px] md:top-[9px]">
-              <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent [mask-repeat:repeat] transform-none left-auto top-auto md:[mask-image:url(data:image/svg+xml,<svg%20aria-label=\%22Stacked%20Bar%20Chart\%22%20display=\%22block\%22%20role=\%22presentation\%22%20viewBox=\%220%200%2024%2024\%22%20xmlns=\%22http://www.w3.org/2000/svg\%22><path%20d=\%22M%204%200%20L%200%200%20L%200%2011%20L%204%2011%20Z\%22%20fill=\%22var%28--esondr,%20rgb%280,0,0)] md:absolute md:aspect-square md:bg-black md:[mask-repeat:no-repeat] md:translate-x-[-50.0%] md:translate-y-[-50.0%] md:w-12 md:[mask-position:50%] md:left-2/4 md:top-2/4"></div>
-            </div>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] gap-x-[normal] block flex-row h-auto justify-normal min-h-0 min-w-0 gap-y-[normal] md:relative md:content-start md:items-start md:aspect-auto md:gap-x-3 md:flex md:flex-col md:h-min md:justify-start md:min-h-[auto] md:min-w-[auto] md:gap-y-3 md:w-full md:p-[30px]">
-              <div className="static box-content caret-black shrink min-h-0 min-w-0 w-auto md:relative md:box-border md:caret-transparent md:shrink-0 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] block flex-row justify-normal break-normal md:aspect-auto md:flex md:flex-col md:justify-start md:break-words md:w-full">
-                <p className="text-base font-normal box-content caret-black tracking-[normal] leading-[normal] min-h-0 min-w-0 text-start break-normal  md:text-xl md:font-medium md:aspect-auto md:box-border md:caret-transparent md:tracking-[-0.2px] md:leading-6 md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-left md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-satoshi">
-                  {props.title}
-                </p>
-              </div>
-              <div className="static box-content caret-black block flex-row shrink justify-normal max-w-none min-h-0 min-w-0 opacity-100 w-auto break-normal md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:max-w-[600px] md:min-h-[auto] md:min-w-[auto] md:opacity-80 md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                <p className="text-base box-content caret-black leading-[normal] min-h-0 min-w-0 text-start break-normal  md:aspect-auto md:box-border md:caret-transparent md:leading-6 md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-left md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-inter">
-                  {props.description}
-                </p>
-              </div>
-            </div>
-            <div className="static box-content caret-black shrink w-auto z-auto top-auto md:absolute md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-none h-auto opacity-100 pointer-events-auto right-auto md:aspect-auto md:bg-[radial-gradient(50%_50%_at_93.7%_8.1%,rgba(184,199,217,0.5)_0%,rgba(4,7,13,0)_100%)] md:h-[306px] md:opacity-10 md:pointer-events-none md:w-[437px] md:z-[1] md:right-0 md:top-0"></div>
-            <div className="static bg-transparent shadow-none box-content caret-black shrink w-auto z-auto rounded-none top-auto md:absolute md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] left-auto md:w-11 md:z-[1] md:rounded-[100px] md:left-[77px] md:top-[145px]"></div>
-            <div className="static bg-transparent shadow-none box-content caret-black shrink w-auto z-auto rounded-none right-auto top-auto md:absolute md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-8 md:z-[1] md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-[100px] md:right-[43px] md:top-[19px]"></div>
-            <div className="static bg-transparent shadow-none box-content caret-black shrink transform-none w-auto z-auto rounded-none left-auto top-auto md:absolute md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:translate-x-[-50.0%] md:w-[22px] md:z-[1] md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-[100px] md:left-[58%] md:top-[129px]"></div>
-            <div className="static bg-transparent shadow-none box-content caret-black shrink transform-none w-auto z-auto rounded-none left-auto top-auto md:absolute md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:translate-x-[-50.0%] md:w-[22px] md:z-[1] md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:rounded-[100px] md:left-[31%] md:top-[58px]"></div>
-          </>
+          </div>
         )}
 
-        {props.variant === "md:grow-[2] md:h-[374px]" && (
-          <>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] bg-transparent shadow-none gap-x-[normal] block flex-row h-auto justify-normal gap-y-[normal] z-auto rounded-none left-auto top-auto md:absolute md:content-start md:items-start md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:gap-x-0 md:flex md:flex-col md:h-min md:justify-center md:gap-y-0 md:w-[450px] md:z-[1] md:overflow-hidden md:rounded-lg md:left-11 md:top-10">
-              <div className="static box-content caret-black shrink min-h-0 min-w-0 w-auto md:relative md:box-border md:caret-transparent md:shrink-0 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] bg-transparent shadow-none gap-x-[normal] block flex-row h-auto justify-normal gap-y-[normal] pl-0 py-0 rounded-none md:content-start md:items-start md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:gap-x-6 md:flex md:flex-col md:h-min md:justify-center md:gap-y-6 md:w-full md:overflow-hidden md:pl-1.5 md:py-2 md:rounded-lg">
-                <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] gap-x-[normal] block h-auto justify-normal min-h-0 min-w-0 gap-y-[normal] md:relative md:content-center md:items-center md:aspect-auto md:gap-x-4 md:flex md:h-min md:justify-start md:min-h-[auto] md:min-w-[auto] md:gap-y-4 md:w-[206px]">
-                  <div className="static box-content caret-black md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] shrink h-auto min-h-0 min-w-0 opacity-100 w-auto rounded-none md:relative md:shrink-0 md:h-[25px] md:min-h-[auto] md:min-w-[auto] md:opacity-[0.52] md:w-[25px] md:overflow-hidden md:rounded-[100px] after:md:accent-auto after:md:box-border after:md:caret-transparent after:md:text-black after:md:block after:md:text-xs after:md:not-italic after:md:normal-nums after:md:font-normal after:md:h-full after:md:tracking-[normal] after:md:leading-[normal] after:md:list-outside after:md:list-disc after:md:pointer-events-none after:md:absolute after:md:text-start after:md:no-underline after:md:indent-[0px] after:md:normal-case after:md:visible after:md:w-full after:md:rounded-[100px] after:md:border-separate after:md:border-[5px] after:md:border-solid after:md:border-black/40 after:md:left-0 after:md:top-0 after:md:font-sans_serif"></div>
-                  <div className="box-content caret-black md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] static self-auto shrink min-h-0 min-w-0 w-auto md:relative md:self-stretch md:shrink-0 md:min-h-[auto] md:min-w-[auto] md:w-0.5">
-                    <div className="static bg-transparent box-content caret-black h-auto opacity-100 w-auto md:relative md:aspect-auto md:bg-black/40 md:box-border md:caret-transparent md:h-full md:opacity-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"></div>
-                  </div>
-                </div>
+        {/* VARIANT 2: Custom Product Engineering (Editor Tool) */}
+        {props.variant === "variant2" && (
+          <div className="relative w-full max-w-[440px] mt-8">
+            {/* Generating Button */}
+            <div className="absolute -top-12 right-0 sm:-right-4 bg-white px-5 py-2 rounded-full shadow-lg border border-neutral-100 text-xs font-bold text-neutral-800 tracking-tight z-20 group-hover:-translate-y-1 transition-transform">
+              {props.generateButtonText}
+            </div>
+
+            {/* Editor Box */}
+            <div className="bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-neutral-100 overflow-hidden group-hover:shadow-xl transition-all">
+              <div className="h-12 border-b border-neutral-50 px-4 flex items-center">
+                <div className="w-4 h-4 rounded-full border-[3.5px] border-neutral-200" />
               </div>
-              {props.menuItems &&
-                props.menuItems.map((item, index) => (
+              <div className="p-4 space-y-3">
+                {props.menuItems?.map((item, i) => (
                   <div
-                    key={index}
-                    className="static [align-items:normal] box-content caret-black gap-x-[normal] block flex-row shrink h-auto justify-normal min-h-0 min-w-0 gap-y-[normal] w-auto pl-0 py-0 md:relative md:content-start md:items-start md:aspect-auto md:box-border md:caret-transparent md:gap-x-6 md:flex md:flex-col md:shrink-0 md:h-min md:justify-center md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:gap-y-6 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:pl-2.5 md:py-2.5 md:scroll-m-0 md:scroll-p-[auto]"
+                    key={i}
+                    className="text-sm sm:text-[15px] text-neutral-400 font-medium pl-2"
                   >
-                    <div className="static [align-items:normal] box-content caret-black gap-x-[normal] block shrink h-auto justify-normal min-h-0 min-w-0 gap-y-[normal] w-auto md:relative md:content-center md:items-center md:aspect-auto md:box-border md:caret-transparent md:gap-x-6 md:flex md:shrink-0 md:h-min md:justify-start md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:gap-y-6 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[206px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                      <div className="static box-content caret-black block basis-auto flex-row grow-0 shrink justify-normal min-h-0 min-w-0 opacity-100 w-auto break-normal md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:basis-0 md:flex-col md:grow md:shrink-0 md:justify-start md:min-h-[auto] md:min-w-[auto] md:opacity-50 md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-px md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                        <p className="text-base box-content caret-black leading-[normal] min-h-0 min-w-0 text-start break-normal  md:aspect-auto md:box-border md:caret-transparent md:leading-6 md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-left md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-inter">
-                          {item}
-                        </p>
-                      </div>
-                    </div>
+                    {item}
                   </div>
                 ))}
-            </div>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] bg-transparent shadow-none gap-x-[normal] block flex-row h-auto justify-normal gap-y-[normal] transform-none z-auto rounded-none left-auto top-auto md:absolute md:content-center md:items-center md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:gap-x-6 md:flex md:flex-col md:h-min md:justify-center md:gap-y-6 md:translate-x-[-50.0%] md:w-[124px] md:z-[2] md:overflow-hidden md:p-2 md:rounded-[100px] md:left-[81%] md:top-10">
-              <div className="static box-content caret-black shrink md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] block flex-row justify-normal min-h-0 min-w-0 text-wrap md:relative md:aspect-auto md:flex md:flex-col md:justify-start md:min-h-[auto] md:min-w-[auto] md:text-nowrap">
-                <p className="text-base font-normal box-content caret-black leading-[normal] min-h-0 min-w-0 text-start  md:aspect-auto md:box-border md:caret-transparent md:leading-6 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] text-wrap md:font-semibold md:text-center md:text-nowrap md:font-inter">
-                  {props.generateButtonText}
-                </p>
               </div>
             </div>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] gap-x-[normal] block flex-row h-auto justify-normal min-h-0 min-w-0 gap-y-[normal] md:relative md:content-start md:items-start md:aspect-auto md:gap-x-2 md:flex md:flex-col md:h-min md:justify-start md:min-h-[auto] md:min-w-[auto] md:gap-y-2 md:w-full md:p-[30px]">
-              <div className="static box-content caret-black shrink min-h-0 min-w-0 w-auto md:relative md:box-border md:caret-transparent md:shrink-0 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] block flex-row justify-normal break-normal md:aspect-auto md:flex md:flex-col md:justify-start md:break-words md:w-full">
-                <p className="text-base font-normal box-content caret-black tracking-[normal] leading-[normal] min-h-0 min-w-0 text-start break-normal  md:text-xl md:font-medium md:aspect-auto md:box-border md:caret-transparent md:tracking-[-0.2px] md:leading-6 md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-left md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-satoshi">
-                  {props.title}
-                </p>
-              </div>
-              <div className="static box-content caret-black block flex-row shrink justify-normal max-w-none min-h-0 min-w-0 opacity-100 w-auto break-normal md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:max-w-[600px] md:min-h-[auto] md:min-w-[auto] md:opacity-80 md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                <p className="text-base box-content caret-black leading-[normal] min-h-0 min-w-0 text-start break-normal  md:aspect-auto md:box-border md:caret-transparent md:leading-6 md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-left md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-inter">
-                  {props.description}
-                </p>
-              </div>
-            </div>
-          </>
+          </div>
         )}
 
-        {props.variant === "md:grow-[2] md:h-[382px]" && (
-          <>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] gap-x-[normal] block flex-row h-auto justify-normal min-h-0 min-w-0 gap-y-[normal] md:relative md:content-start md:items-start md:aspect-auto md:gap-x-2 md:flex md:flex-col md:h-min md:justify-start md:min-h-[auto] md:min-w-[auto] md:gap-y-2 md:w-full md:p-[30px]">
-              <div className="static box-content caret-black shrink min-h-0 min-w-0 w-auto md:relative md:box-border md:caret-transparent md:shrink-0 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] block flex-row justify-normal break-normal md:aspect-auto md:flex md:flex-col md:justify-start md:break-words md:w-full">
-                <p className="text-base font-normal box-content caret-black tracking-[normal] leading-[normal] min-h-0 min-w-0 text-start break-normal  md:text-xl md:font-medium md:aspect-auto md:box-border md:caret-transparent md:tracking-[-0.2px] md:leading-6 md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-left md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-satoshi">
-                  {props.title}
-                </p>
-              </div>
-              <div className="static box-content caret-black block flex-row shrink justify-normal max-w-none min-h-0 min-w-0 opacity-100 w-auto break-normal md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:max-w-[600px] md:min-h-[auto] md:min-w-[auto] md:opacity-80 md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                <p className="text-base box-content caret-black leading-[normal] min-h-0 min-w-0 text-start break-normal  md:aspect-auto md:box-border md:caret-transparent md:leading-6 md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-left md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-inter">
-                  {props.description}
-                </p>
-              </div>
+        {/* VARIANT 3: Workflow Automation (Chat) */}
+        {props.variant === "variant3" && (
+          <div className="w-full max-w-[400px]">
+            <div className="bg-white/80 backdrop-blur-sm px-6 py-4 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-white flex items-center group-hover:scale-[1.02] transition-transform duration-500">
+              <span className="text-neutral-400 text-sm sm:text-[15px] font-medium">
+                {props.chatPlaceholder}
+              </span>
             </div>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] bg-transparent shadow-none gap-x-[normal] block h-auto justify-normal opacity-100 gap-y-[normal] transform-none z-auto p-0 rounded-none right-auto top-auto md:absolute md:content-center md:items-center md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:gap-x-2.5 md:flex md:h-min md:justify-center md:opacity-0 md:gap-y-2.5 md:translate-y-[60px] md:w-[299px] md:z-[1] md:overflow-hidden md:px-3.5 md:py-2.5 md:rounded-[10px] md:right-[60px] md:top-[17px]"></div>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none h-auto opacity-100 transform-none z-auto rounded-none right-auto top-auto md:absolute md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:h-10 md:opacity-0 md:translate-y-[60px] md:w-10 md:z-[1] md:overflow-hidden md:rounded-[100px] md:right-[13px] md:top-[21px]"></div>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] bg-transparent shadow-none gap-x-[normal] block flex-row h-auto justify-normal gap-y-[normal] transform-none z-auto pl-0 py-0 rounded-none left-auto bottom-auto md:absolute md:content-start md:items-start md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:gap-x-6 md:flex md:flex-col md:h-min md:justify-center md:gap-y-6 md:translate-x-[-50.0%] md:w-[539px] md:z-[1] md:overflow-hidden md:pl-5 md:py-3.5 md:rounded-[100px] md:left-2/4 md:bottom-[140px]">
-              <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] gap-x-[normal] block h-auto justify-normal min-h-0 min-w-0 gap-y-[normal] md:relative md:content-center md:items-center md:aspect-auto md:gap-x-0 md:flex md:h-min md:justify-start md:min-h-[auto] md:min-w-[auto] md:gap-y-0 md:w-[206px]">
-                <div className="box-content caret-black md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] static self-auto shrink min-h-0 min-w-0 w-auto md:relative md:self-stretch md:shrink-0 md:min-h-[auto] md:min-w-[auto] md:w-0.5">
-                  <div className="static bg-transparent box-content caret-black h-auto opacity-100 w-auto md:relative md:aspect-auto md:bg-black/40 md:box-border md:caret-transparent md:h-full md:opacity-[0.0112575] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"></div>
-                </div>
-                <div className="static box-content caret-black block flex-row shrink justify-normal min-h-0 min-w-0 opacity-100 text-wrap md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:min-h-[auto] md:min-w-[auto] md:opacity-[0.37] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:text-nowrap md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                  <p className="text-base box-content caret-black leading-[normal] min-h-0 min-w-0 text-start text-wrap  md:aspect-auto md:box-border md:caret-transparent md:leading-6 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-center md:decoration-auto md:underline-offset-auto md:text-nowrap md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-inter">
-                    {props.chatPlaceholder}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </>
+          </div>
         )}
 
-        {props.variant === "md:grow md:h-[382px]" && (
-          <>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] bg-transparent shadow-none gap-x-[normal] block h-auto justify-normal gap-y-[normal] transform-none z-auto rounded-none left-auto top-auto md:absolute md:content-center md:items-center md:aspect-auto md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:gap-x-6 md:flex md:h-min md:justify-center md:gap-y-6 md:translate-x-[-50.0%] md:w-min md:z-[4] md:p-[9px] md:rounded-[20px] md:left-[49%] md:top-[11px]">
-              <div className="static box-content caret-black shrink min-h-0 min-w-0 w-auto md:relative md:box-border md:caret-transparent md:shrink-0 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none z-auto rounded-none md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:w-[102px] md:z-[2] md:overflow-hidden md:rounded-[20px]">
-                <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] transform-none left-auto top-auto md:absolute md:aspect-square md:translate-x-[-50.0%] md:translate-y-[-50.0%] md:w-16 md:left-[48%] md:top-2/4">
-                  <div className="static box-content caret-black md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] inset-auto md:absolute md:inset-0">
-                    <img
-                      src={props.logoUrl}
-                      alt={props.logoAlt}
-                      className="box-content caret-black h-auto object-fill align-middle w-auto md:aspect-[auto_154_/_110] md:box-border md:caret-transparent md:h-full md:object-contain md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
-                    />
-                  </div>
-                </div>
-              </div>
+        {/* VARIANT 4: Maintenance Retainers (Icons) */}
+        {props.variant === "variant4" && (
+          <div className="relative w-full h-full">
+            {/* Main Center Icon */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-2xl shadow-xl flex items-center justify-center border border-white/40 z-10 group-hover:scale-110 transition-transform duration-500">
+              {props.logoUrl && (
+                <img
+                  src={props.logoUrl}
+                  alt={props.logoAlt}
+                  className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                />
+              )}
             </div>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] [align-items:normal] gap-x-[normal] block flex-row h-auto justify-normal min-h-0 min-w-0 gap-y-[normal] md:relative md:content-start md:items-start md:aspect-auto md:gap-x-2 md:flex md:flex-col md:h-min md:justify-start md:min-h-[auto] md:min-w-[auto] md:gap-y-2 md:w-full md:p-[30px]">
-              <div className="static box-content caret-black shrink min-h-0 min-w-0 w-auto md:relative md:box-border md:caret-transparent md:shrink-0 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] block flex-row justify-normal break-normal md:aspect-auto md:flex md:flex-col md:justify-start md:break-words md:w-full">
-                <p className="text-base font-normal box-content caret-black tracking-[normal] leading-[normal] min-h-0 min-w-0 text-start break-normal  md:text-xl md:font-medium md:aspect-auto md:box-border md:caret-transparent md:tracking-[-0.2px] md:leading-6 md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-left md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-satoshi">
-                  {props.title}
-                </p>
-              </div>
-              <div className="static box-content caret-black block flex-row shrink justify-normal max-w-none min-h-0 min-w-0 opacity-100 w-auto break-normal md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:max-w-[600px] md:min-h-[auto] md:min-w-[auto] md:opacity-80 md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                <p className="text-base box-content caret-black leading-[normal] min-h-0 min-w-0 text-start break-normal  md:aspect-auto md:box-border md:caret-transparent md:leading-6 md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-left md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-inter">
-                  {props.description}
-                </p>
-              </div>
-            </div>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none z-auto rounded-none left-auto top-auto md:absolute md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:w-[70px] md:z-[2] md:overflow-hidden md:rounded-2xl md:left-[23px] md:top-[83px]">
-              <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] transform-none left-auto top-auto md:absolute md:aspect-square md:translate-x-[-50.0%] md:translate-y-[-50.0%] md:w-[45px] md:[mask-position:0%] md:left-2/4 md:top-2/4">
-                <div className="box-content caret-black block md:aspect-auto md:box-border md:caret-transparent md:contents md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
+
+            {/* Floating peripheral icons */}
+            {props.workflowIcons?.map((icon, i) => {
+              const positions = [
+                "top-4 left-8",
+                "top-12 right-6",
+                "bottom-8 left-4",
+                "bottom-4 right-12",
+              ];
+              const sizes = [
+                "w-10 h-10",
+                "w-11 h-11",
+                "w-12 h-12",
+                "w-11 h-11",
+              ];
+
+              return (
+                <div
+                  key={i}
+                  className={cn(
+                    "absolute bg-white rounded-xl shadow-md border border-white/40 flex items-center justify-center p-2.5 transition-all duration-700 group-hover:opacity-100 opacity-80",
+                    positions[i % positions.length],
+                    sizes[i % sizes.length],
+                  )}
+                  style={{
+                    transitionDelay: `${i * 100}ms`,
+                    transform: `translateY(${Math.sin(i) * 5}px)`,
+                  }}
+                >
                   <img
-                    src={props.workflowIcons?.[0]?.src}
-                    alt={props.workflowIcons?.[0]?.alt}
-                    className="box-content caret-black block shrink h-auto align-middle w-auto md:aspect-auto md:box-border md:caret-transparent md:inline-block md:shrink-0 md:h-full md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
+                    src={icon.src}
+                    alt={icon.alt}
+                    className="w-full h-full object-contain"
                   />
                 </div>
-              </div>
-            </div>
-            <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none transform-none z-auto rounded-none right-auto top-auto md:absolute md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:translate-y-[-50.0%] md:w-[58px] md:z-[2] md:overflow-hidden md:rounded-2xl md:right-[123px] md:top-[53%]">
-              <div className="static box-content caret-black shrink w-auto md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] transform-none left-auto top-auto md:absolute md:aspect-square md:translate-x-[-50.0%] md:translate-y-[-50.0%] md:w-[33px] md:left-2/4 md:top-2/4">
-                <div className="box-content caret-black block md:aspect-auto md:box-border md:caret-transparent md:contents md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                  <img
-                    src={props.workflowIcons?.[1]?.src}
-                    alt={props.workflowIcons?.[1]?.alt}
-                    className="box-content caret-black block shrink h-auto align-middle w-auto md:aspect-auto md:box-border md:caret-transparent md:inline-block md:shrink-0 md:h-full md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="static box-content caret-black shrink w-auto z-auto top-auto md:absolute md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] bg-transparent shadow-none rounded-none left-auto md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:w-[45px] md:z-[2] md:rounded-2xl md:left-[58px] md:top-[11px]">
-              <div className="static box-content caret-black shrink transform-none w-auto left-auto top-auto md:absolute md:aspect-square md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:translate-x-[-50.0%] md:translate-y-[-50.0%] md:w-[27px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-2/4 md:top-2/4">
-                <div className="box-content caret-black block md:aspect-auto md:box-border md:caret-transparent md:contents md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                  <img
-                    src={props.workflowIcons?.[2]?.src}
-                    alt={props.workflowIcons?.[2]?.alt}
-                    className="box-content caret-black block shrink h-auto align-middle w-auto md:aspect-auto md:box-border md:caret-transparent md:inline-block md:shrink-0 md:h-full md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="static bg-transparent shadow-none box-content caret-black shrink w-auto z-auto rounded-none top-auto md:absolute md:aspect-square md:bg-neutral-100 md:shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] right-auto md:w-12 md:z-[2] md:rounded-2xl md:right-9 md:top-[39px]">
-              <div className="static box-content caret-black shrink transform-none w-auto left-auto top-auto md:absolute md:aspect-square md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:translate-x-[-50.0%] md:translate-y-[-50.0%] md:w-[27px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-2/4 md:top-2/4">
-                <div className="box-content caret-black block md:aspect-auto md:box-border md:caret-transparent md:contents md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-                  <img
-                    src={props.workflowIcons?.[3]?.src}
-                    alt={props.workflowIcons?.[3]?.alt}
-                    className="box-content caret-black block shrink h-auto align-middle w-auto md:aspect-auto md:box-border md:caret-transparent md:inline-block md:shrink-0 md:h-full md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
-                  />
-                </div>
-              </div>
-            </div>
-          </>
+              );
+            })}
+          </div>
         )}
+      </div>
+
+      {/* Text Content */}
+      <div className="relative z-10 mt-auto flex flex-col gap-2 sm:gap-3">
+        <h3 className="text-[1.35rem] sm:text-2xl font-semibold tracking-tight text-neutral-900 leading-tight">
+          {props.title}
+        </h3>
+        <p className="text-neutral-500 text-sm sm:text-[15px] leading-relaxed max-w-[480px]">
+          {props.description}
+        </p>
       </div>
     </Card>
   );

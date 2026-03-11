@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 
 import { useState, useEffect } from "react";
 import { DesktopMenu } from "@/components/Navbar/DesktopMenu";
-import { NavbarButton } from "@/components/Navbar/NavbarButton";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { HeaderLogo } from "../Logo";
+import Link from "next/link";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,15 +34,15 @@ export const Navbar = () => {
         transition={{ duration: 0.5 }}
       >
         <nav
-          className={`relative w-full max-w-[1640px] mx-auto transition-all duration-300 ${
+          className={`relative w-full mx-auto transition-all duration-300 max-w-[1240px] ${
             isScrolled
-              ? "bg-white/80 backdrop-blur-md shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] rounded-full py-3 px-6 md:px-8 border border-white/20"
+              ? "bg-white/80 backdrop-blur-md shadow-[rgba(0,0,0,0.08)_0px_0.706592px_0.706592px_-0.666667px,rgba(0,0,0,0.08)_0px_1.80656px_1.80656px_-1.33333px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-2px,rgba(0,0,0,0.07)_0px_6.8656px_6.8656px_-2.66667px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-3.33333px,rgba(0,0,0,0.02)_0px_30px_30px_-4px,rgb(255,255,255)_0px_3px_1px_0px_inset] rounded-full py-3 px-6 border border-white/20"
               : "bg-transparent"
           }`}
         >
           <div className="w-full flex items-center justify-between">
             {/* Logo */}
-            <div className="shrink-0 z-50">
+            <div className="shrink-0 z-50 flex-1">
               <HeaderLogo />
             </div>
 
@@ -52,8 +52,10 @@ export const Navbar = () => {
             </div>
 
             {/* Desktop Button */}
-            <div className="hidden md:block shrink-0">
-              <NavbarButton />
+            <div className="hidden md:flex shrink-0 flex-1 justify-end">
+              <Button>
+                Get Started <ArrowUpRight size={16} />
+              </Button>
             </div>
 
             <div className="md:hidden z-50">
@@ -88,34 +90,39 @@ export const Navbar = () => {
               <a
                 href="#services"
                 onClick={toggleMenu}
-                className="text-2xl font-medium text-black py-2 border-b border-gray-100"
+                className="py-2 border-b border-gray-100"
               >
                 Services
               </a>
               <a
                 href="#team"
                 onClick={toggleMenu}
-                className="text-2xl font-medium text-black py-2 border-b border-gray-100"
+                className="py-2 border-b border-gray-100"
               >
                 Team
               </a>
               <a
                 href="#faq"
                 onClick={toggleMenu}
-                className="text-2xl font-medium text-black py-2 border-b border-gray-100"
+                className="py-2 border-b border-gray-100"
               >
                 FAQ
               </a>
               <a
                 href="#contact"
                 onClick={toggleMenu}
-                className="text-2xl font-medium text-black py-2 border-b border-gray-100"
+                className="py-2 border-b border-gray-100"
               >
                 Contact
               </a>
-              <div className="mt-4">
-                <NavbarButton />
-              </div>
+              <Link
+                href="mailto://contact.realsolutionsph@gmail.com"
+                className="mt-4"
+              >
+                <Button>
+                  Contact Us <ArrowUpRight size={16} />
+                </Button>
+              </Link>
             </div>
           </motion.div>
         )}

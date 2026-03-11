@@ -1,5 +1,6 @@
 import { FAQItem } from "./FAQItem";
 import { Accordion } from "@/components/ui/accordion";
+import { Mail } from "lucide-react";
 
 export const FAQList = () => {
   const faqs = [
@@ -32,42 +33,34 @@ export const FAQList = () => {
   ];
 
   return (
-    <div className="static [align-items:normal] box-content caret-black gap-x-[normal] block flex-row shrink h-auto justify-normal max-w-none min-h-0 min-w-0 gap-y-[normal] w-auto md:relative md:content-center md:items-center md:aspect-auto md:box-border md:caret-transparent md:gap-x-8 md:flex md:flex-col md:shrink-0 md:h-min md:justify-center md:max-w-[1000px] md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:gap-y-8 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-      <div className="static box-content caret-black shrink max-w-none min-h-0 min-w-0 opacity-100 transform-none w-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:shrink-0 md:max-w-[600px] md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-        <div className="static [align-items:normal] box-content caret-black gap-x-[normal] block flex-row h-auto justify-normal max-w-none gap-y-[normal] w-auto md:relative md:content-center md:items-center md:aspect-auto md:box-border md:caret-transparent md:gap-x-4 md:flex md:flex-col md:h-min md:justify-center md:max-w-full md:overscroll-x-auto md:overscroll-y-auto md:gap-y-4 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <FAQItem
-                key={index}
-                index={index}
-                question={faq.question}
-                answer={faq.answer}
-              />
-            ))}
-          </Accordion>
-        </div>
-      </div>
-      <div className="static [align-items:normal] box-content caret-black gap-x-[normal] block shrink h-auto justify-normal min-h-0 min-w-0 opacity-100 gap-y-[normal] transform-none w-auto p-0 rounded-none md:relative md:content-center md:items-center md:aspect-auto md:box-border md:caret-transparent md:gap-x-2 md:flex md:shrink-0 md:h-min md:justify-center md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:gap-y-2 md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-min md:overflow-hidden md:[mask-position:0%] md:bg-left-top md:px-3 md:py-1.5 md:scroll-m-0 md:scroll-p-[auto] md:rounded-lg">
-        <div className="static box-content caret-black shrink h-auto min-h-0 min-w-0 w-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:shrink-0 md:h-[25px] md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[25px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-          <div className="box-content caret-black block md:aspect-auto md:box-border md:caret-transparent md:contents md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-            <img
-              src="https://c.animaapp.com/mloikyq0WG9Ud9/assets/icon-46.svg"
-              alt="Icon"
-              className="box-content caret-black block shrink h-auto align-middle w-auto md:aspect-auto md:box-border md:caret-transparent md:inline-block md:shrink-0 md:h-full md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
+    <div className="flex flex-col items-center w-full max-w-[840px] gap-6">
+      <div className="w-full">
+        <Accordion type="single" collapsible className="w-full space-y-4">
+          {faqs.map((faq, index) => (
+            <FAQItem
+              key={index}
+              index={index}
+              question={faq.question}
+              answer={faq.answer}
             />
-          </div>
+          ))}
+        </Accordion>
+      </div>
+
+      {/* Footer Email Section */}
+      <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left text-neutral-600 sm:pt-4">
+        <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-white border border-neutral-100 shadow-sm transition-transform hover:scale-105">
+          <Mail className="size-4 text-neutral-800" />
         </div>
-        <div className="static box-content caret-black block flex-row shrink justify-normal min-h-0 min-w-0 text-wrap md:relative md:aspect-auto md:box-border md:caret-transparent md:flex md:flex-col md:shrink-0 md:justify-start md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:text-nowrap md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]">
-          <p className="text-base box-content caret-black leading-[normal] min-h-0 min-w-0 text-start text-wrap  md:aspect-auto md:box-border md:caret-transparent md:leading-6 md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:text-center md:decoration-auto md:underline-offset-auto md:text-nowrap md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-inter">
-            Feel free to mail us for any enquiries :{" "}
-            <a
-              href="mailto://contact.realsolutionsph@gmail.com"
-              className="box-content caret-black no-underline text-wrap md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:underline md:decoration-auto md:underline-offset-auto md:text-nowrap md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"
-            >
-              contact.realsolutionsph@gmail.com
-            </a>
-          </p>
-        </div>
+        <p className="text-sm font-medium tracking-tight">
+          Feel free to mail us for any enquiries:{" "}
+          <a
+            href="mailto:contact.realsolutionsph@gmail.com"
+            className="text-neutral-900 underline underline-offset-4 hover:text-neutral-700 transition-colors"
+          >
+            contact.realsolutionsph@gmail.com
+          </a>
+        </p>
       </div>
     </div>
   );

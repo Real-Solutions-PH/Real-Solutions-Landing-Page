@@ -5,13 +5,15 @@ import { HeroContent } from "./HeroContent";
 
 export const Hero = () => {
   return (
-    <section id="hero" className="relative content-center items-center box-border caret-transparent gap-x-8 flex flex-col shrink-0 h-screen min-h-[600px] justify-center gap-y-8 w-full z-[1] overflow-hidden px-6 md:px-12 lg:px-20">
-
+    <section
+      id="hero"
+      className="relative content-center items-center box-border caret-transparent gap-x-8 flex flex-col shrink-0 h-screen min-h-[600px] justify-center gap-y-8 w-full z-[1] overflow-hidden px-6 md:px-12 lg:px-20"
+    >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="z-[4] w-full flex justify-center"
+        className="z-[4] w-full flex justify-center max-w-[1240px]"
       >
         <HeroContent />
       </motion.div>

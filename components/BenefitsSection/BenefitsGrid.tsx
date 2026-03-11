@@ -3,7 +3,7 @@ import { BenefitCard } from "./BenefitsCard";
 export const BenefitsGrid = () => {
   return (
     <div className="flex flex-col gap-6 w-full justify-center items-center">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full md:max-w-none">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
         <BenefitCard
           variant="variant1"
           title="AI Customer Support"
