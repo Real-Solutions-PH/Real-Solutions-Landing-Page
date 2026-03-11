@@ -5,6 +5,7 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { TeamSection } from "@/components/TeamSection";
 import { Footer } from "@/components/Footer";
 import { FAQSection } from "@/components/FAQSection";
+import { ProjectsSection } from "@/components/ProjectsSection";
 
 export default function Page() {
   return (
@@ -19,6 +20,7 @@ export default function Page() {
         description="Partner with an AI agency delivering smart solutions."
       />
       <ServicesSection />
+      <ProjectsSection />
       <TeamSection />
       <FAQSection />
       <Footer />
