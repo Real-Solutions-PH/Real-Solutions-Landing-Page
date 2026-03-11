@@ -58,7 +58,7 @@ export const ProjectContent = ({
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-base box-content caret-black leading-[normal] min-h-0 min-w-0 break-normal  md:text-sm md:aspect-auto md:box-border md:caret-transparent md:leading-[22.4px] md:min-h-[auto] md:min-w-[auto] md:break-words md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:font-inter opacity-80"
+                className="text-sm text-black/50"
               >
                 {activeProject.description}
               </motion.p>
