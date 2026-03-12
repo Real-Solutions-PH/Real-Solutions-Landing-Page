@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Globe, Linkedin } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export type TeamMemberCardProps = {
   name: string;
@@ -57,9 +58,11 @@ export const TeamMemberCard = (props: TeamMemberCardProps) => {
       {/* Image Area */}
       <div className="relative w-full aspect-[4/3] rounded-2xl bg-[#EAECF0] overflow-hidden flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500">
         {props.imageUrl ? (
-          <img
+          <Image
             src={props.imageUrl}
             alt={props.name}
+            width={800}
+            height={800}
             className="w-full h-full object-cover"
           />
         ) : (
