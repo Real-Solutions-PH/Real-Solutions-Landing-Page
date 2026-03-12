@@ -43,17 +43,8 @@ export default function Error({
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Button
-              onClick={() => reset()}
-              className="bg-black text-white hover:bg-black/90 md:shadow-[rgba(61,61,61,0.72)_0px_0.602187px_1.08394px_-1.25px,rgba(61,61,61,0.64)_0px_2.28853px_4.11936px_-2.5px,rgba(61,61,61,0.25)_0px_10px_18px_-3.75px] transition-all duration-300 rounded-[10px] px-8 py-6 font-medium font-inter"
-            >
-              Try Again
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="bg-white text-black border border-neutral-200 hover:bg-neutral-50 md:shadow-[rgba(158,158,158,0.69)_0px_0.70659px_0.70659px_-0.58px] transition-all duration-300 rounded-[10px] px-8 py-6 font-medium font-inter"
-            >
+            <Button onClick={() => reset()}>Try Again</Button>
+            <Button asChild variant="outline">
               <Link href="/">Return to Home</Link>
             </Button>
           </div>
